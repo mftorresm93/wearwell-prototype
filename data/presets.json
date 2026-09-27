@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Office Polished",
+    "vibe": "Clean tailoring that always reads put-together.",
+    "occasion": "Work",
+    "weather": "All year",
+    "type": "separates",
+    "items": [23, 50, 88, 98]
+  },
+  {
+    "name": "Everyday Casual",
+    "vibe": "The easy jeans-and-a-good-top formula.",
+    "occasion": "Casual",
+    "weather": "All year",
+    "type": "separates",
+    "items": [2, 62, 83, 98]
+  },
+  {
+    "name": "Night Out",
+    "vibe": "A going-out top with heels and a statement bag.",
+    "occasion": "Going out",
+    "weather": "All year",
+    "type": "separates",
+    "items": [11, 58, 79, 96]
+  },
+  {
+    "name": "Easy Dress",
+    "vibe": "One-and-done: a dress with booties and a bag.",
+    "occasion": "Casual",
+    "weather": "All year",
+    "type": "dress",
+    "items": [128, 159, 98]
+  },
+  {
+    "name": "Smart Layers",
+    "vibe": "A blazer over a shirt for cooler days at work.",
+    "occasion": "Work",
+    "weather": "Cold",
+    "type": "separates",
+    "items": [15, 100, 51, 88, 98]
+  },
+  {
+    "name": "Skirt & Knit",
+    "vibe": "A soft knit tucked into a skirt, finished with a belt.",
+    "occasion": "Work",
+    "weather": "All year",
+    "type": "separates",
+    "items": [26, 47, 160, 20, 98]
+  }
+]

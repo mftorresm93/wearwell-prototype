@@ -1,0 +1,58 @@
+﻿{
+    "weathers":  [
+                     "All year",
+                     "Cold",
+                     "Hot"
+                 ],
+    "occasions":  [
+                      "Work",
+                      "Casual",
+                      "Going out",
+                      "Lounge",
+                      "Resort"
+                  ],
+    "slots":  [
+                  "Top",
+                  "Layer",
+                  "Bottom",
+                  "Dress",
+                  "Shoes",
+                  "Bag",
+                  "Accessory"
+              ],
+    "categories":  [
+                       "Shirts",
+                       "T-shirts",
+                       "Going-out tops",
+                       "Sweaters",
+                       "Blazers",
+                       "Jackets",
+                       "Vests",
+                       "Jeans",
+                       "Pants",
+                       "Skirts",
+                       "Dresses",
+                       "Shoes",
+                       "Sneakers",
+                       "Booties",
+                       "Sandals",
+                       "Bags",
+                       "Belts"
+                   ],
+    "brands":  [
+                   "Aritzia",
+                   "Champs Sports",
+                   "Everlane",
+                   "Free People",
+                   "Loeffler Randall",
+                   "Madewell",
+                   "Maje",
+                   "Quince",
+                   "Reformation",
+                   "Songmont",
+                   "Urban Outfitters",
+                   "Verafied NY",
+                   "Veronica Beard",
+                   "Zara"
+               ]
+}

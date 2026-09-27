@@ -1,0 +1,2765 @@
+﻿[
+    {
+        "id":  1,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/1.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/golightly-sleeveless-cardigan/127242.html?color=36530",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a03_127242_36530_on_a",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  2,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/2.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/kindred-top/134207.html?color=11420",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a03_134207_11420_on_a",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  3,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/3.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/storyboard-cardigan/129897.html?color=11420",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a03_129897_11420_on_a",
+        "price":  98,
+        "currency":  "USD"
+    },
+    {
+        "id":  4,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/4.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/croquet-sweater-vest/131193.html?color=36529",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a03_131193_36529_on_a",
+        "price":  43.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  9,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/9.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/sweaters/pullovers/button-front-sleeveless-cardigan/OA918/?ccode=RD6057"
+    },
+    {
+        "id":  5,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/5.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/lightweight-cotton-cashmere-ribbed-tank?color=mocha-heather\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6XOqDLMdsmjBHbdPKYpNQE/56ec0b9f87c4412e801b3b750d7f411f/W-LKT-92-MOCHTHR_2079_EDITED_1.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  36,
+        "currency":  "USD"
+    },
+    {
+        "id":  6,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/6.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/stretch-cotton-jersey-boat-neck-tank?color=linen-white\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/47Uhhq7ASg7IJEXeEPNkz2/4cf3ef6973bcf6c52e45c48ca7fb1a62/W-LKT-84-LINWHI-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  19.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  7,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/7.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/womens-lightweight-cotton-cashmere-sweater-shell?color=heather-oatmeal\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/5KQiJrKw2AVwb0FZMtbkWW/287f218a5bf741f958e2b0263a517b16/W-SWT-211-HEAOAT_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  29.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  8,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/8.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/distressed-denim-popover-shirt?color=medium-indigo\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6rgOQz0HhpzLXglJ7mJSEV/8c868fbae7736ad9205bbbe3937fbb4b/Spring_Lookbook_09-18675_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  49.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  99,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/99.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/outro-oversized-poplin-shirt/124843.html?color=33417",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a02_124843_33417_on_a",
+        "price":  98,
+        "currency":  "USD"
+    },
+    {
+        "id":  106,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/106.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/regency-linen-camisole/132641.html?color=34310",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a02_132641_34310_on_a",
+        "price":  48.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  107,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/107.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/cotton-charm%E2%84%A2-basque-sweater-vest/130067.html?color=31343",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a03_130699_31343_on_a",
+        "price":  30.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  108,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/108.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/cotton-charm%E2%84%A2-markham-sweater-vest/131385.html?color=11420",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a03_131385_11420_on_a",
+        "price":  43.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  109,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/109.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/airplush-cotton%E2%84%A2-monterosso-top/131698.html?color=1275",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a02_131698_1275_on_a",
+        "price":  33.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  110,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/110.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/basque-sweater-vest/115811.html?color=1274",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f25_a03_115811_1274_on_a",
+        "price":  38.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  103,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/103.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-boxy-oxford-white-blue",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/04382550_1cc5.jpg?v=1753411667",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  112,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/112.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-gauze-smocked-cami-heather-rose",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/3591a1bc_68a6.jpg?v=1777680007",
+        "price":  59,
+        "currency":  "USD"
+    },
+    {
+        "id":  113,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/113.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-tie-front-scallop-tank-in-linen-bone",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/39f1df43_7a80.jpg?v=1775073603",
+        "price":  59,
+        "currency":  "USD"
+    },
+    {
+        "id":  114,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/114.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-tube-top-in-stretch-linen-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/f55a7088_a501.jpg?v=1781042410",
+        "price":  55,
+        "currency":  "USD"
+    },
+    {
+        "id":  119,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/119.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-long-vest-in-stretch-linen-birch",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/f8c06eee_d507.jpg?v=1772226006",
+        "price":  83,
+        "currency":  "USD"
+    },
+    {
+        "id":  104,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/104.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tops-shirts/button-downs/the-easy-shirt/OB041/?ccode=WR2629"
+    },
+    {
+        "id":  105,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/105.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tops-shirts/tops/ruffled-pintuck-high-neck-top/OB076/?ccode=WT0005"
+    },
+    {
+        "id":  115,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/115.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tops-shirts/tops/smocked-boatneck-sleeveless-top/OA999/?ccode=WT0012"
+    },
+    {
+        "id":  116,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/116.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tops-shirts/tops/sleeveless-boatneck-vest-top/OA998/?ccode=KF9847"
+    },
+    {
+        "id":  100,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/100.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/linen-shirt?color=white\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6vA85LeANXJcsB8MlxKS1l/d7f0e5df6b9864f181167feba5487804/W-BLO-33-WHT-2175_EDITED_1.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  42,
+        "currency":  "USD"
+    },
+    {
+        "id":  101,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/101.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/organic-cotton-poplin-long-sleeve-shirt?color=hudson-stripe\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/1IlhYCjZyA8cdSjiYO7ZEl/91ad6436a6d9d307e5f4e0846d178b84/W-BLO-53-HUDSTR-16204_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  39.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  102,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/102.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/organic-cotton-voile-lace-blouse?color=classic-white\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/2hZs0QdniZFMyuGhi4zV95/92e6b48547fae37a2d7a70c64a3eabd3/W-BLO-122-CLAWHI_01-EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  60,
+        "currency":  "USD"
+    },
+    {
+        "id":  111,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/111.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-european-linen-halter-top?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/2XLabm3RbuHdosFpBbbm0Q/08c1bf1492bc801fea75772e81cbc644/W-BLO-131-BLA_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  42,
+        "currency":  "USD"
+    },
+    {
+        "id":  117,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/117.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-european-linen-pleated-tank?color=white\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/3I3i7qBs8ylJ2b723yQrBZ/ca4f8f1674891176378fc18a397db57f/W-BLO-136-WHIT_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  50,
+        "currency":  "USD"
+    },
+    {
+        "id":  118,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/118.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-european-linen-longline-vest?color=white\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/4eiWX9iCYPHhG9VWxBbj83/e8f16f513b28eea623b52e43aa93753b/Erin_Walsh_Flats_9-330_42_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  52,
+        "currency":  "USD"
+    },
+    {
+        "id":  78,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/78.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/interlock-cotton-function-t-shirt/124059.html?color=35559",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a01_128104_35559_on_a",
+        "price":  40,
+        "currency":  "USD"
+    },
+    {
+        "id":  75,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/75.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-organic-cotton-box-cut-tee-white",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/Reshoot_2020-03-30_F-T-CTN-ORGN-BOX-WHT_01.jpg?v=1784063808",
+        "price":  34,
+        "currency":  "USD"
+    },
+    {
+        "id":  76,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/76.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tees/the-perfect-crewneck-tee-in-allday-cotton/NY429/?ccode=KI1567"
+    },
+    {
+        "id":  77,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/77.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tees/the-relaxed-tee-in-vintage-jersey/NZ543/?ccode=KI1270"
+    },
+    {
+        "id":  150,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/150.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/cashmere/cashmere-tee-shirt?color=ivory\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/Xg2DYWBJDNc9z303OzI7u/024b6aa8ef8b01ce9b9742159e208c68/W-BLO-6-IVRY_0792_copy.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  44.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  137,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/137.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/f-t-crb-boat-tnk-wht",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/Reshoot_2026-09-13_F-T-CRB-BOAT-TNK-WHT_01.jpg?v=1788451124",
+        "price":  48,
+        "currency":  "USD"
+    },
+    {
+        "id":  138,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/138.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-tissue-boatneck-tank-side-tie-bone",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/392badf3_2890.jpg?v=1781550004",
+        "price":  44,
+        "currency":  "USD"
+    },
+    {
+        "id":  136,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "T-shirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/136.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/organic-cotton-micro-rib-crop-cutaway-tank?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6lvORC4XV9H073Is2lGTDa/46a1142aee0e7178b47d85c68145bc43/W-LKT-109-BLK_0127_EDITED_1.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  15,
+        "currency":  "USD"
+    },
+    {
+        "id":  10,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Going-out tops",
+        "weather":  "All year",
+        "occasions":  [
+                          "Going out"
+                      ],
+        "image":  "images/10.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/original-contour-ravish-top/119720.html?color=13695",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a01_119720_13695_on_a",
+        "price":  58,
+        "currency":  "USD"
+    },
+    {
+        "id":  11,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Going-out tops",
+        "weather":  "All year",
+        "occasions":  [
+                          "Going out"
+                      ],
+        "image":  "images/11.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/softspoke%E2%84%A2-wynd-top/134874.html?color=11420",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a03_134874_11420_on_a",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  12,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Going-out tops",
+        "weather":  "All year",
+        "occasions":  [
+                          "Going out"
+                      ],
+        "image":  "images/12.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-drapey-jersey-off-shoulder-top-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/Reshoot_2026-09-06_F-T-FDJ-TWST-SL-BLK_01.jpg?v=1788327157",
+        "price":  68,
+        "currency":  "USD"
+    },
+    {
+        "id":  23,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/23.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/tribeca-cardigan/129633.html?color=37622",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a03_129633_37622_on_a",
+        "price":  118,
+        "currency":  "USD"
+    },
+    {
+        "id":  24,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/24.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/golightly-cardigan/114360.html?color=37619",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a03_114360_37619_on_a",
+        "price":  118,
+        "currency":  "USD"
+    },
+    {
+        "id":  25,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/25.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/bare-merino-wool-aspect-polo-sweater/127835.html?color=37623",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a03_127835_37623_on_a",
+        "price":  98,
+        "currency":  "USD"
+    },
+    {
+        "id":  32,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/32.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-paper-merino-wool-cardigan-open-air",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/3c4d4add_b55b.jpg?v=1772154009",
+        "price":  64,
+        "currency":  "USD"
+    },
+    {
+        "id":  33,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/33.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/f-swtr-ecm-cdgn-crp-red",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-09-20_F-SWTR-ECM-CDGN-CRP-RED_flat.jpg?v=1789065939",
+        "price":  178,
+        "currency":  "USD"
+    },
+    {
+        "id":  34,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/34.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/f-swtr-ecm-cr-ls-brn",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-09-13_F-SWTR-ECM-CR-LS-BRN_flat.jpg?v=1789059047",
+        "price":  148,
+        "currency":  "USD"
+    },
+    {
+        "id":  39,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/39.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-must-have-shirt-denim-dark-indigo",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/14025376_9674.jpg?v=1753411740",
+        "price":  98,
+        "currency":  "USD"
+    },
+    {
+        "id":  40,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/40.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-boxy-long-sleeve-cabernet-birch",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/Reshoot_2026-08-09_F-T-FVJ-BOXY-LS-CABST_03.jpg?v=1785862764",
+        "price":  48,
+        "currency":  "USD"
+    },
+    {
+        "id":  41,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/41.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-everlight-long-sleeve-crew-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/6b18e388_2e57.jpg?v=1770663605",
+        "price":  58,
+        "currency":  "USD"
+    },
+    {
+        "id":  36,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/36.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/sweaters/pullovers/polo-sweater-in-100-softwool/OB203/?ccode=SR9759"
+    },
+    {
+        "id":  37,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/37.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/sweaters/cardigans/longline-cardigan-jacket/OB210/?ccode=RD0215"
+    },
+    {
+        "id":  38,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/38.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/sweaters/cardigans/pointelle-knit-peplum-cardigan-in-100-cotton/NZ307/?ccode=RD5906"
+    },
+    {
+        "id":  42,
+        "brand":  "Madewell",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/42.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/tops-shirts/denim/denim-tie-neck-shirt/OB266/?ccode=DN0292"
+    },
+    {
+        "id":  26,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/26.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/cashmere/cashmere-crewneck-sweater?color=heather-grey\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6raQtTk7L6V5MruegXEimT/5e495f76b34a5054d2e16416f83c0cf1/W-HKT-3-HGRY-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  50,
+        "currency":  "USD"
+    },
+    {
+        "id":  27,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/27.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/women-s-mongolian-cashmere-slouchy-polo-sweater?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6EYKsvpYa4A8Zu5yXuqWwE/8255161d788225d3655af3e26df998c2/W-SWT-272-BLA_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  120,
+        "currency":  "USD"
+    },
+    {
+        "id":  28,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/28.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-mongolian-cashmere-dolman-sleeve-henley-sweater?color=varsity-red\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/1fYK0YRyv7ujPbYXLRlhsg/63c92ab79aebd65ef16df4b7fe27f0cf/W-SWT-207-VARRED-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  89.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  29,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/29.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/brushed-cashmere-cropped-crewneck-cardigan?color=heather-grey\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/7p5fTO8Bj4S4clIpj3aDnE/1cf663f2b11bd0e859793cbe79f5db0c/W-SWT-206-HEAGRE_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  130,
+        "currency":  "USD"
+    },
+    {
+        "id":  30,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/30.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/mongolian-cashmere-cropped-crew-cardigan?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/7xq3oXxcdb2Y0I24xSHltQ/dd942ad983a0674fe2711e350ae5469a/W-SWT-192-BLK-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  89.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  31,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/31.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/womens-cotton-cashmere-fitted-ribbed-cardigan?color=mocha-heather\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/2dwwVAu8evZ6crKEDUZOMC/3fd5af45b453ca8256b68bcecc04cbd4/W-SWT-200-MOCHEA-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  49.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  35,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/35.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/women-s-cotton-cashmere-rugby-polo?color=bone-%252f-brown-%252f-mountain-spring-blue-variegated-stripe\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/4eJl38UxmNRr0XrwDM8BxX/45706cee5b2598d02d1d8a6aec785506/W-SWT-227-BBMSPBLV_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  60,
+        "currency":  "USD"
+    },
+    {
+        "id":  158,
+        "brand":  "Everlane",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/158.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-half-zip-sweater-in-luxe-merino-navy",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/6281e909_edbf.jpg?v=1757698390",
+        "price":  148,
+        "currency":  "USD"
+    },
+    {
+        "id":  151,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/151.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-organic-cotton-sweater-tee?color=ivory\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/1DBXPiIAVBFyD0PrBFZSZ4/60884b1bd31f6aa5fc454fee76843875/W-SWT-166-IVRY-02_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  39.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  153,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/153.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/womens-mongolian-cashmere-short-sleeve-polo?color=heather-grey\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/3RKp5gHkTvLQjma7zvqbYL/7ed9bbd55c7fec325b36899c46110881/W-SWT-210-HEAGRE_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  80,
+        "currency":  "USD"
+    },
+    {
+        "id":  156,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/156.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-mongolian-cashmere-slouchy-blouson-sleeve-crewneck?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/5Ek7Fxeyv6nCPGRPHiAPSV/ef33dddf2f07fa28ebc1fb2cd81e7b79/W-SWT-274-BLA-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  120,
+        "currency":  "USD"
+    },
+    {
+        "id":  157,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Sweaters",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/157.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/baby-cashmere-quarter-zip-sweater?color=heather-pewter\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/5JYbkN5ptD07IQiND0SFAl/6fdf3fdba9497c6d9ddb899d8091d136/W-SWT-121-HPWTR_0416_EDITED_1.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  249.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  13,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/13.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/generation-blazer/134422.html?color=38632",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a04_134422_38632_on_a",
+        "price":  265,
+        "currency":  "USD"
+    },
+    {
+        "id":  14,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/14.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/advance-wool-blazer/133931.html?color=38095",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a04_133931_38095_on_a",
+        "price":  265,
+        "currency":  "USD"
+    },
+    {
+        "id":  15,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/15.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/generation-blazer/116425.html?color=1274",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a04_116425_1274_on_a",
+        "price":  248,
+        "currency":  "USD"
+    },
+    {
+        "id":  16,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/16.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-tencel-oversized-blazer-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/534774a3_45c0.jpg?v=1753411505",
+        "price":  198,
+        "currency":  "USD"
+    },
+    {
+        "id":  17,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/17.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-blazer-in-tailor-twill-khaki",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/1ba2a1c9_5dce.jpg?v=1761326490",
+        "price":  167,
+        "currency":  "USD"
+    },
+    {
+        "id":  18,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/18.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-tencel-double-breasted-blazer-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/e39957d4_aa3d.jpg?v=1753411702",
+        "price":  50,
+        "currency":  "USD"
+    },
+    {
+        "id":  19,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Blazers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/19.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-relaxed-blazer-buttersmooth-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/626b5e59_cb35.jpg?v=1753411900",
+        "price":  55,
+        "currency":  "USD"
+    },
+    {
+        "id":  143,
+        "brand":  "Aritzia",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/143.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/tenet-jacket/132058.html?color=37712",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a04_135711_37712_on_a",
+        "price":  228,
+        "currency":  "USD"
+    },
+    {
+        "id":  144,
+        "brand":  "Aritzia",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/144.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/falcon-jacket/136369.html?color=18891",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a04_136369_18891_on_a",
+        "price":  248,
+        "currency":  "USD"
+    },
+    {
+        "id":  145,
+        "brand":  "Aritzia",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/145.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/society-cardigan/129487.html?color=36216",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a03_129487_36216_on_a",
+        "price":  128,
+        "currency":  "USD"
+    },
+    {
+        "id":  146,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/146.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-organic-cotton-field-jacket-beech",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-08-09_F-OTWR-CTM-JKT-TWILL-BCH_01.jpg?v=1786554397",
+        "price":  178,
+        "currency":  "USD"
+    },
+    {
+        "id":  147,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/147.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/f-otwr-fco-jkt-cord-tof",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-09-13_F-OTWR-FCO-JKT-CORD-TOF_03.jpg?v=1788327096",
+        "price":  148,
+        "currency":  "USD"
+    },
+    {
+        "id":  148,
+        "brand":  "Madewell",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/148.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/jackets/jackets/the-field-jacket/OB091/?ccode=WR2698"
+    },
+    {
+        "id":  149,
+        "brand":  "Madewell",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/149.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/jackets/leather-suede/leather-bubble-sleeve-jacket/NT637/?ccode=BK5229"
+    },
+    {
+        "id":  139,
+        "brand":  "Aritzia",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/139.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/generation-blazer/129875.html?color=11420",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a04_129875_11420_on_a",
+        "price":  248,
+        "currency":  "USD"
+    },
+    {
+        "id":  140,
+        "brand":  "Everlane",
+        "slot":  "Layer",
+        "category":  "Jackets",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/140.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-oversized-blazer-stretch-linen-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/7f56fdea_3027.jpg?v=1753411942",
+        "price":  149,
+        "currency":  "USD"
+    },
+    {
+        "id":  43,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Vests",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/43.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/regal-vest/128069.html?color=18891",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a04_128069_18891_on_a",
+        "price":  118,
+        "currency":  "USD"
+    },
+    {
+        "id":  44,
+        "brand":  "Aritzia",
+        "slot":  "Top",
+        "category":  "Vests",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/44.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/cruiselinen%E2%84%A2-regal-vest/124183.html?color=1274",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f25_a04_124183_1274_on_a",
+        "price":  118,
+        "currency":  "USD"
+    },
+    {
+        "id":  152,
+        "brand":  "Quince",
+        "slot":  "Top",
+        "category":  "Vests",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/152.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-yak-crewneck-sweater-vest?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/4MguxUlkjClISWu8NSzNZn/08f3cb4ef633fa006d42f852302328e4/W-SWT-271-BLA-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  65,
+        "currency":  "USD"
+    },
+    {
+        "id":  58,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/58.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/90\u0027s-french-jean/135994.html?color=39275",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a06_135994_39275_on_a",
+        "price":  278,
+        "currency":  "USD"
+    },
+    {
+        "id":  59,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/59.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/savannah-jean/136577.html?color=31759",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a06_136577_31759_on_a",
+        "price":  248,
+        "currency":  "USD"
+    },
+    {
+        "id":  62,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/62.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-way-high-jean-2-dark-indigo",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2025-03-02_F-BTM-DNM-WAYHGH-STRT-DKW_01_5e768365-62f1-4b08-a148-b63c4e69bf2c.jpg?v=1784063937",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  63,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/63.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-the-way-high-utility-jean-agave-green",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-07-19_F-BTM-DNM-UTLTY-JEAN-OLV_01.jpg?v=1782328184",
+        "price":  76,
+        "currency":  "USD"
+    },
+    {
+        "id":  64,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/64.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-way-high-sailor-jean-2-washed-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/99637248_b103.jpg?v=1753411820",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  65,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/65.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-lightweight-loose-wide-leg-jean-long-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-08-30_F-BTM-DNM-LW-WIDE-BLK_01_9b5d2ee9-f8e9-40bf-b0d1-6ebf913cdd6e.jpg?v=1785515850",
+        "price":  108,
+        "currency":  "USD"
+    },
+    {
+        "id":  66,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/66.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-way-high-sailor-jean-2-dark-indigo",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/4d727f06_e6a1.jpg?v=1753411824",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  67,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/67.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/women-slow-slung-tie-front-jean-medium-indigo",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-06-21_F-BTM-DNM-LOW-TIE-MED_01.jpg?v=1782753712",
+        "price":  108,
+        "currency":  "USD"
+    },
+    {
+        "id":  68,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/68.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-way-high-curve-jean-ltind",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/a7733de5_39cb.jpg?v=1753411616",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  69,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/69.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-the-way-high-utility-jean-ecru",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/eceb4921_132e.jpg?v=1770940803",
+        "price":  108,
+        "currency":  "USD"
+    },
+    {
+        "id":  70,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/70.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-gardener-jean-washed-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/23545273_dab0.jpg?v=1753411681",
+        "price":  74,
+        "currency":  "USD"
+    },
+    {
+        "id":  71,
+        "brand":  "Madewell",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/71.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/jeans/slim-skinny-jeans/the-jules-slim-straight-jean/NX992/?ccode=DM8475"
+    },
+    {
+        "id":  72,
+        "brand":  "Madewell",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/72.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/OA877/?ccode=DN0294"
+    },
+    {
+        "id":  73,
+        "brand":  "Madewell",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/73.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/jeans/wide-leg-jeans/the-perfect-vintage-wide-leg-crop-jean-in-vintage-canvas/NZ038/?ccode=NA6148"
+    },
+    {
+        "id":  74,
+        "brand":  "Madewell",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/74.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/labels-we-love/madewell-x-isko/circular-longline-straight-jean/NZ189/?ccode=DN0039"
+    },
+    {
+        "id":  60,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/60.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/stretch-high-rise-wide-leg-jeans-30?color=seaside-blue\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/2tYSDPwbgh0d3iQAe4BiLL/7098b02cf51a62e25e4dd5911d0de99a/W-PNT-171-SEABLU-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  50,
+        "currency":  "USD"
+    },
+    {
+        "id":  61,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/61.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/comfort-stretch-high-rise-barrel-jeans?color=charcoal-black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/57xSdeopct66CjFroP3XBl/1299d4795936b54d8dd3a3ee4fccae37/W-PNT-130-CHABLA-SZ26-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  50,
+        "currency":  "USD"
+    },
+    {
+        "id":  50,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/50.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/archer-satin-pant/132654.html?color=18891",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a06_132654_18891_on_a",
+        "price":  138,
+        "currency":  "USD"
+    },
+    {
+        "id":  53,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/53.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-utility-twill-barrel-pant-coffee-bean-long",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2026-08-09_F-BTM-UTW-TWST-BAREL-DBRN_01_1822c22b-9306-4ded-a483-09d36fe7832a.jpg?v=1786039467",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  54,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/54.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-everywhere-pant-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2024-09-01_F-BTM-CTN-PLTD-PNT-BLK_01.jpg?v=1784064167",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  55,
+        "brand":  "Everlane",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/55.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-way-high-drape-pant-ankle-ash-brown",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/787698a4_5e37.jpg?v=1753411447",
+        "price":  30,
+        "currency":  "USD"
+    },
+    {
+        "id":  56,
+        "brand":  "Madewell",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/56.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/pants/pull-on-pants/the-devon-pant/OA929/?ccode=BK0070"
+    },
+    {
+        "id":  51,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/51.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/womens-100-washable-silk-drawstring-wide-leg-pants-new?color=navy\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/5UXiCc04KXRmy4yZUJhnYl/3699c45c02be93d63fc94b6b121e6599/W-PNT-178-NVY_0901_EDITED_1.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  92,
+        "currency":  "USD"
+    },
+    {
+        "id":  52,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/52.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/womens-vintage-wash-tencel-drawstring-cargo-pants?color=olive\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6Vhluk5MubqqPVBhv40msF/fcdb39ef7b0d1f2aa216035aacfb9879/W-PNT-100-OLV_1574_EDITED_copy.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  59.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  120,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/120.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/airplush-cotton%E2%84%A2-sail-pant/123943.html?color=36213",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a06_125490_36213_on_a",
+        "price":  88,
+        "currency":  "USD"
+    },
+    {
+        "id":  121,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Pants",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/121.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-european-linen-pleated-trouser?color=white\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/7xubEFIadE9CxVIu7gyJXU/a02ea7cd67c9b6b653b5ab89a76488df/100__European_Linen_Pleated_Trouser_WHITE.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  52,
+        "currency":  "USD"
+    },
+    {
+        "id":  45,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/45.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/henrietta-satin-skirt/128560.html?color=38617",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/f26_a07_128560_38410_on_a",
+        "price":  148,
+        "currency":  "USD"
+    },
+    {
+        "id":  46,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/46.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/slip-satin-maxi-skirt/118884.html?color=15104",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a07_118884_15104_on_a",
+        "price":  98,
+        "currency":  "USD"
+    },
+    {
+        "id":  47,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/47.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-washable-silk-lace-skirt?color=champagne\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/1xeBaXJqEcnWMohdv0EeR7/830a5d0dfe52879fa6789325079f16cd/W-SKT-42-CHAM_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  82,
+        "currency":  "USD"
+    },
+    {
+        "id":  48,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/48.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/silk/silk-skirt?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6gjkNLbfniUNBP4QJJNX3l/581f1d7dd4514d8e31013a2577c3bffb/W-PNT-4-BLK_2363.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  69.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  49,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/49.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-washable-silk-maxi-skirt?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/i3EYnAescbGp4ZeiIixU4/a78ed4dbba92ba37e94db9f1aac6861d/Kate_Young_Editorial_14-1720_105_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  80,
+        "currency":  "USD"
+    },
+    {
+        "id":  122,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/122.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/damasque-skirt/123929.html?color=10230",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a07_123929_10230_on_a",
+        "price":  128,
+        "currency":  "USD"
+    },
+    {
+        "id":  123,
+        "brand":  "Aritzia",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/123.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/socialite-linen-skirt/130978.html?color=36213",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a07_130978_36213_on_a",
+        "price":  128,
+        "currency":  "USD"
+    },
+    {
+        "id":  126,
+        "brand":  "Madewell",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/126.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.madewell.com/p/womens/clothing/skirts/pintucked-midi-skirt/OA976/?ccode=WT0012"
+    },
+    {
+        "id":  124,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/124.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/organic-cotton-gauze-smocked-maxi-skirt?color=wild-cherry\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/770lih4ey0nwwIP4IXsMSG/87f3fcaab40f13c546d4a36c241004a4/W-SKT-31-WILCHE_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  59.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  125,
+        "brand":  "Quince",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/125.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/stretch-denim-mini-skirt?color=atlantic-blue\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/5J7XB59jiqLE3wYrL9TQvG/7f2817ebc93a76fb316a2af88f55cb77/W-SKT-23-ATLBLU-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  42,
+        "currency":  "USD"
+    },
+    {
+        "id":  57,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "All year",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/57.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/forage-dress/132411.html?color=1274",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_132411_1274_on_a",
+        "price":  83.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  154,
+        "brand":  "Quince",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/154.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/stretch-cotton-jersey-knotted-midi-dress?color=chile\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/LO2UJurg0QC0M44Rs6GcE/77864c1dfa72852290deeca2a3b3b5a6/W-DRS-223-CHI_06_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  49.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  155,
+        "brand":  "Quince",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Work"
+                      ],
+        "image":  "images/155.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/mongolian-cashmere-sleeveless-midi-sweater-dress?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/7G0DPvuxtZJASuYQTUIxFn/4ffc1470e9271e8d50a77b6674997714/W-DRS-89-BLK_0194.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  109.9,
+        "currency":  "USD"
+    },
+    {
+        "id":  127,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/127.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/technique-poplin-cami-dress/131092.html?color=1274",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_131092_1274_on_a",
+        "price":  126,
+        "currency":  "USD"
+    },
+    {
+        "id":  128,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/128.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/technique-linen-dress/131189.html?color=36213",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_131189_36213_on_a",
+        "price":  168,
+        "currency":  "USD"
+    },
+    {
+        "id":  129,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/129.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/casbah-linen-dress/137388.html?color=10230",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_137388_10230_on_a",
+        "price":  168,
+        "currency":  "USD"
+    },
+    {
+        "id":  130,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/130.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/technique-linen-mini-dress/131190.html?color=37106",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_132951_37106_on_a",
+        "price":  148,
+        "currency":  "USD"
+    },
+    {
+        "id":  131,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/131.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/arcos-linen-dress/136367.html?color=1275",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_136367_1275_on_a",
+        "price":  98,
+        "currency":  "USD"
+    },
+    {
+        "id":  132,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/132.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/pergola-dress/132585.html?color=1275",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_132585_1275_on_a",
+        "price":  43.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  133,
+        "brand":  "Aritzia",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/133.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.aritzia.com/us/en/product/revive-poplin-mini-dress/131935.html?color=27400",
+        "imageOrigin":  "https://assets.aritzia.com/image/upload/q_auto,f_jpg,dpr_auto,w_1920/s26_a08_131935_27400_on_a",
+        "price":  63.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  134,
+        "brand":  "Quince",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/134.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/100-organic-cotton-poplin-smocked-drop-waist-midi-dress?color=pale-custard-yellow\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/3kpKD4sUtFRghEZlwYqftH/244cb80919805815ec07295a78e72514/W-DRS-222-PALCUYE_01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  70,
+        "currency":  "USD"
+    },
+    {
+        "id":  135,
+        "brand":  "Quince",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/135.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/smocked-boat-neck-maxi-dress?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/1LkZj0U5WVPhZbWtvX5h3U/c0fadd59fb0d161c8277a2d55a7a5925/W-DRS-225-BLA-01_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  64,
+        "currency":  "USD"
+    },
+    {
+        "id":  87,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/87.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-pointed-toe-slingback-heel-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/2e8a2589_8b27.jpg?v=1777406408",
+        "price":  198,
+        "currency":  "USD"
+    },
+    {
+        "id":  88,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/88.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-leather-day-driver-loafer-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/400dc64d_e739.jpg?v=1765843205",
+        "price":  178,
+        "currency":  "USD"
+    },
+    {
+        "id":  89,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/89.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-leather-keyhole-flat-classic-red",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/b5546e5e_e301.jpg?v=1754448255",
+        "price":  178,
+        "currency":  "USD"
+    },
+    {
+        "id":  90,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/90.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-leather-day-mary-jane-blush",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/9d0cd4b1_5190.jpg?v=1753411641",
+        "price":  128,
+        "currency":  "USD"
+    },
+    {
+        "id":  79,
+        "brand":  "Loeffler Randall",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/79.jpg",
+        "imageSource":  "web",
+        "url":  "https://loefflerrandall.com/collections/flats/products/landon-espresso-silver-suede-ballet-flat",
+        "imageOrigin":  "https://loefflerrandall.com/cdn/shop/files/LANDON-SKS-ESSIL_3_medium.jpg?v=1753296913",
+        "price":  295,
+        "currency":  "USD"
+    },
+    {
+        "id":  80,
+        "brand":  "Loeffler Randall",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/80.jpg",
+        "imageSource":  "web",
+        "url":  "https://loefflerrandall.com/products/landry-honey-woven-ballet-flat",
+        "imageOrigin":  "https://loefflerrandall.com/cdn/shop/files/LANDRY-WL-HONEY-10_64f7bd3a-e2d5-47ac-bf63-58ec5525ed68_medium.jpg?v=1741207436",
+        "price":  350,
+        "currency":  "USD"
+    },
+    {
+        "id":  91,
+        "brand":  "Maje",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/91.jpg",
+        "imageSource":  "web",
+        "url":  "https://us.maje.com/en/p/smooth-leather-slingback-pumps/3661601973611.html?srsltid=AfmBOooc1ej6dxOU-ZASk7g7eolgKxr-UTSIJjgXt5FaUgMuwl1VCH5lfY0",
+        "imageOrigin":  "https://us.maje.com/on/demandware.static/-/Sites-maje-master-catalog/default/dwf097681d/images/hi-res/Maje_MFACH00805-2517_F_1.jpg",
+        "price":  270,
+        "currency":  "USD"
+    },
+    {
+        "id":  83,
+        "brand":  "Quince",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/83.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/italian-leather-handwoven-square-toe-ballet-flat?color=electric-blue\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6oEsEnPsV4iaGUzsyB99S/77d4d0ca3f7345770c274126d2369c35/W--334-ELEBLU-025_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  84,
+        "currency":  "USD"
+    },
+    {
+        "id":  84,
+        "brand":  "Quince",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/84.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/italian-leather-bold-buckle-slingback-flat?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6pD4s0KdF5qsQe5Lb4ptEi/88ce016462aee653eb8602b0dff4bf95/W--332-BLCK-1170_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  95,
+        "currency":  "USD"
+    },
+    {
+        "id":  85,
+        "brand":  "Quince",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/85.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/italian-leather-venetian-loafer?color=coffee-bean\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/7dtvdE3hStSgMWiPM4hkr8/80911d169d6c1366e56bb739362237c4/W--466_COFFBEA-120_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  110,
+        "currency":  "USD"
+    },
+    {
+        "id":  86,
+        "brand":  "Quince",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/86.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/italian-leather-soft-loafere?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/6j7ZHFJtMehgmB2yFdl1Om/83a2cdf6e21b42f4a2aa3bcbcf7d5408/W--286-BLCK-1161_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  84,
+        "currency":  "USD"
+    },
+    {
+        "id":  82,
+        "brand":  "Reformation",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/82.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.thereformation.com/products/inez-flat-mule/1320340KEK.html?fbvar=nonbrandedgoogle\u0026gad_source=1\u0026gad_campaignid=22379160712\u0026gbraid=0AAAAADmLagWHDQKqecrF2OqKQqnoL_eVd\u0026gclid=CjwKCAjwtp7VBhBjEiwAJfpV-_qPhYJXcY6rZqu1R7ICWsyJENqSgW_voMCeF0PDKf9GtKS5ldiI9hoCX4AQAvD_BwE\u0026dwvar_1320340KEK_color=KEK\u0026quantity=1",
+        "imageOrigin":  "https://media.thereformation.com/image/upload/f_jpg,q_auto,dpr_1.0/w_800,c_scale//PRD-SFCC/1320340/BLACK_EEL/1320340.1.BLACK_EEL?_s=RAABAB0",
+        "price":  268,
+        "currency":  "USD"
+    },
+    {
+        "id":  81,
+        "brand":  "Zara",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/81.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.zara.com/us/en/leather-slingback-shoes-p11524810.html?v1=545422395\u0026utm_source=google\u0026utm_medium=cpc\u0026gad_source=1\u0026gad_campaignid=23439827896\u0026gbraid=0AAAAADqbk7Z_UwkX5GaponwAkge3e09H2\u0026gclid=CjwKCAjwtp7VBhBjEiwAJfpV-zuSvWIZkUTcboTUF82w65o8hagoTkPQfl3wLFy86igWomAgvTItbhoCWAcQAvD_BwE"
+    },
+    {
+        "id":  141,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/141.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-sculpted-heel-sandal-affogato",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/5a2ce37c_6407.jpg?v=1780704015",
+        "price":  198,
+        "currency":  "USD"
+    },
+    {
+        "id":  142,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/142.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-studio-kitten-heel-black",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/6dae57dc_b3d6.jpg?v=1762450076",
+        "price":  178,
+        "currency":  "USD"
+    },
+    {
+        "id":  93,
+        "brand":  "Champs Sports",
+        "slot":  "Shoes",
+        "category":  "Sneakers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/93.webp",
+        "imageSource":  "web",
+        "url":  "https://www.champssports.com/product/~/U90603EG.html?source=shoppingads\u0026locale=en-US\u0026SID=7391\u0026inceptor=1\u0026cm_mmc=paid%20search-_-google-_--_-PLA-_-DPA-_--_-P-_-Prospecting-_--_-23820388457-_--_--_-PLA-_-U90603EG7-_--_--_-\u0026cm_mmc=Paid%20Search-_-Google-_--_-Shopping-_--_--_--_-LIX-_-Evergreen-_-23820388457-_--_--_--_--_--_--_-\u0026gclsrc=aw.ds\u0026gad_source=1\u0026gad_campaignid=23820416846\u0026gbraid=0AAAAAD0g7JJYDIsAZyZVCq_w2Iz5HO1mI\u0026gclid=CjwKCAjw2aPVBhBkEiwA0Cptt_cHZCtELpPZNKp5c3l6sTSMRl1mxXHhWmLaOA1S9l3ynFIRmtasgRoCh6gQAvD_BwE",
+        "imageOrigin":  "https://assets.footlocker.com/is/image/FLDM/U90603EG_01",
+        "price":  null
+    },
+    {
+        "id":  94,
+        "brand":  "Free People",
+        "slot":  "Shoes",
+        "category":  "Sneakers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/94.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.freepeople.com/shop/new-balance-9060-sneakers/?color=023\u0026countryCode=US\u0026g_acctid=925-773-0063\u0026g_adgroupid=\u0026g_adid=\u0026g_adtype=none\u0026g_campaign=PLAs%20US%20-%20Smart%20Shopping%20PMAX%20US%20-%20Performance%20Max%20-%20Tier%20II\u0026g_campaignid=17721296791\u0026g_keyword=\u0026g_keywordid=\u0026g_network=x\u0026gad_campaignid=17721297256\u0026gad_source=1\u0026gbraid=0AAAAADmlMfnXEiWSsE0olVM00szFjbmdU\u0026gclid=CjwKCAjw2aPVBhBkEiwA0Cptt-3rfprIJIcWwvPABB1WDbAu1zZaRlg1C11_6n-Ps57QWon1mgpyPhoCAEMQAvD_BwE\u0026gclsrc=aw.ds\u0026inventoryCountry=US\u0026utm_kxconfid=vx6ro62gj"
+    },
+    {
+        "id":  92,
+        "brand":  "Urban Outfitters",
+        "slot":  "Shoes",
+        "category":  "Sneakers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/92.png",
+        "imageSource":  "screenshot",
+        "url":  "https://www.urbanoutfitters.com/shop/new-balance-9060-sneaker4?color=022\u0026size=5.5m%2F7w\u0026type=STANDARD\u0026creative=\u0026device=c\u0026g_acctid=312-727-9506\u0026g_adgroupid=\u0026g_adid=\u0026g_adtype=none\u0026g_campaign=%5BNB+PLA+US%5D+-+PMAX+-+Womens+-+Priority\u0026g_campaignid=20233670334\u0026g_keyword=\u0026g_keywordid=\u0026g_network=x\u0026g_type=shopping\u0026matchtype=\u0026network=x\u0026utm_campaign=%5BNB+PLA+US%5D+-+PMAX+-+Womens+-+Priority\u0026utm_content=\u0026utm_kxconfid=vx6q4l3b6\u0026utm_medium=cpc\u0026utm_source=google\u0026utm_term=\u0026gclsrc=aw.ds\u0026gad_source=1\u0026gad_campaignid=20238460742\u0026gbraid=0AAAAADpxK_8wPdbJB_MEE3n4-AAsfGJ_U\u0026gclid=CjwKCAjw2aPVBhBkEiwA0Cpttw7okiCs5iJ2k-yLkX0SF_AL0QOYIQwb4li6kK8F-ziTOM6U-7P3BBoCF9EQAvD_BwE"
+    },
+    {
+        "id":  95,
+        "brand":  "Veronica Beard",
+        "slot":  "Shoes",
+        "category":  "Sneakers",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/95.webp",
+        "imageSource":  "web",
+        "url":  "https://veronicabeard.com/products/natalia-suede-sneaker-chestnut?variant=47449745522859\u0026glCountry=US\u0026glCurrency=USD\u0026utm_source=google\u0026utm_medium=cpc\u0026utm_campaign=US%20-%20Shopping%20-%20Generic%20-%20FP___24018589378\u0026utm_content=___198927147035\u0026utm_term=\u0026nbt=nb%3Aadwords%3Ag%3A24018589378%3A198927147035%3A816143570807\u0026nb_adtype=pla\u0026nb_kwd=\u0026nb_ti=pla-2441218406609\u0026nb_mi=107438211\u0026nb_pc=online\u0026nb_pi=47449745522859\u0026nb_ppi=2441218406609\u0026nb_placement=\u0026nb_li_ms=\u0026nb_lp_ms=\u0026nb_fii=\u0026nb_ap=\u0026nb_mt=\u0026gad_source=1\u0026gad_campaignid=24018589378\u0026gbraid=0AAAAABMxaq_CNNo220FscA1N9IV1MxP29\u0026gclid=CjwKCAjw2aPVBhBkEiwA0Cptt9tXdWVyiv_CC-TII3hbcdwlr6hP-o7SRA1y4KqYUVWZ-gAiAYyHexoC_sYQAvD_BwE",
+        "imageOrigin":  "https://veronicabeard.com/cdn/shop/files/2608_K0195L3202_01.jpg?v=1784663387",
+        "price":  295,
+        "currency":  "USD"
+    },
+    {
+        "id":  161,
+        "brand":  "Everlane",
+        "slot":  "Shoes",
+        "category":  "Booties",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/161.webp",
+        "imageSource":  "web",
+        "url":  "https://www.everlane.com/products/womens-curved-heel-boot-dark-chocolate",
+        "imageOrigin":  "https://www.everlane.com/cdn/shop/files/f1f3aba0_2e94.jpg?v=1756349154",
+        "price":  288,
+        "currency":  "USD"
+    },
+    {
+        "id":  159,
+        "brand":  "Quince",
+        "slot":  "Shoes",
+        "category":  "Booties",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/159.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/unisex/italian-leather-stretch-sock-bootie?color=black\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/yaiIFUNgkqEKTSJ5sBWdq/559f7c0b960a6375039b844bc6ec3625/U-OTH-93-BLK-2432_RETOUCHED_1.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  164,
+        "currency":  "USD"
+    },
+    {
+        "id":  160,
+        "brand":  "Quince",
+        "slot":  "Shoes",
+        "category":  "Booties",
+        "weather":  "Cold",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/160.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/knit-heeled-bootie?color=cognac\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/78MhjGpM1Uy1oA9QiWy9z5/803d1bb295120ad0c6eb36d076e68e44/W--295-COG-078_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  82,
+        "currency":  "USD"
+    },
+    {
+        "id":  98,
+        "brand":  "Quince",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/98.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/leather-soft-bucket-shoulder-bag?color=warm-taupe\u0026size=one-size\u0026g_network=g\u0026g_productchannel=online\u0026g_adid=815819407372\u0026g_acctid=978-058-8398\u0026g_keyword=\u0026g_adtype=pla\u0026g_keywordid=aud-2279058146067:pla-295586530990\u0026g_ifcreative=\u0026g_adgroupid=201908873687\u0026g_productid=45127772078250\u0026g_merchantid=128669708\u0026g_partition=295586530990\u0026g_campaignid=24002800263\u0026g_ifproduct=product\u0026g_campaign=\u0026utm_source=google\u0026utm_medium=paid_search\u0026utm_campaign=\u0026utm_term=45127772078250\u0026mpdp=true\u0026gad_source=1\u0026gad_campaignid=24002800263\u0026gbraid=0AAAAAC4ZeNZCRT1S6QHUDKaa2UL_u-VEQ\u0026gclid=CjwKCAjw2aPVBhBkEiwA0Cptt-3sSFaTU5ezXupIPCaqqMkix_eB-TCNeKgT-dyIul_azTYbirE5VhoCrW8QAvD_BwE",
+        "imageOrigin":  "https://images.quince.com/6ylR1rVgqw9Dc30xWhXekv/10d9f71d9c1d6ac02ea851ae833cc3b7/W-BAG-113_SOFIVO-073_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  144,
+        "currency":  "USD"
+    },
+    {
+        "id":  97,
+        "brand":  "Songmont",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/97.jpg",
+        "imageSource":  "web",
+        "url":  "https://songmontofficial.com/products/song-bucket-bag-taupe?variant=45844662845631\u0026gad_source=1\u0026gad_campaignid=23050766065\u0026gbraid=0AAAAAoiQduUP7G6eBLhYlbc_gkj4dh9mo\u0026gclid=CjwKCAjw2aPVBhBkEiwA0Cptt1vvnjdFDjuWrAhwvujT4D_6q3wg745y91zjweKgurNx2csKEbQYIhoCEF4QAvD_BwE\u0026region=US",
+        "imageOrigin":  "https://songmontofficial.com/cdn/shop/files/3_4_Logo_3fa32aa0-db98-49a4-9be1-ea8025a275f7.jpg?v=1784235140",
+        "price":  510,
+        "currency":  "USD"
+    },
+    {
+        "id":  96,
+        "brand":  "Verafied NY",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/96.webp",
+        "imageSource":  "web",
+        "url":  "https://verafiedny.com/products/gold-black-hobo-bag-1",
+        "imageOrigin":  "https://verafiedny.com/cdn/shop/files/Black-Gold-Hobo-Bag.png?v=1740513181",
+        "price":  278,
+        "currency":  "USD"
+    },
+    {
+        "id":  20,
+        "brand":  "Quince",
+        "slot":  "Accessory",
+        "category":  "Belts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/20.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/daphne-european-leather-multi-keeper-belt?color=espresso\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/FotIluq8q7u2ER2GcO3aL/b96ae15e2a0c9524a2d078439638261c/W-BLT-11-ESPBRO-209-EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  58,
+        "currency":  "USD"
+    },
+    {
+        "id":  21,
+        "brand":  "Quince",
+        "slot":  "Accessory",
+        "category":  "Belts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/21.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/elissa-triple-keeper-european-leather-belt?color=black%252fsilver\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/3MYejhHnrJQeBocCD0Pz4S/8f9e00b921d45354208022e9cbc07e05/W-BAG-202-BLK-103_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  58,
+        "currency":  "USD"
+    },
+    {
+        "id":  22,
+        "brand":  "Quince",
+        "slot":  "Accessory",
+        "category":  "Belts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/22.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/alyssa-european-leather-studded-belt?color=black%252fgold\u0026gender=women",
+        "imageOrigin":  "https://images.quince.com/9vgqX360tLKFPtzRlBxTN/0fcf143a9da04193caec2c1edea3cf35/W-BLT-6_Alyssa_European_Leather_Studded_Belt_Black-Gold_261_EDITED.jpg?fm=jpg\u0026q=90\u0026w=1600",
+        "price":  68,
+        "currency":  "USD"
+    },
+    {
+        "id":  162,
+        "brand":  "JW PEI",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Work",
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/162.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.jwpei.com/products/hana-medium-tote-bag-navy-blue",
+        "price":  139,
+        "currency":  "USD"
+    },
+    {
+        "id":  163,
+        "brand":  "JW PEI",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/163.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.jwpei.com/products/cleo-faux-straw-box-shape-top-handle-bag-brown",
+        "price":  119,
+        "currency":  "USD"
+    },
+    {
+        "id":  164,
+        "brand":  "JW PEI",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/164.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.jwpei.com/products/classic-top-handle-bag-black",
+        "price":  99,
+        "currency":  "USD"
+    },
+    {
+        "id":  165,
+        "brand":  "JW PEI",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Work",
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/165.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.jwpei.com/products/ines-padlock-tote-bag-yellow",
+        "price":  129,
+        "currency":  "USD"
+    },
+    {
+        "id":  166,
+        "brand":  "Tkees",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Work",
+                          "Casual"
+                      ],
+        "image":  "images/166.jpg",
+        "imageSource":  "web",
+        "url":  "https://tkees.com/products/square-toe-lilu-sable?currency=USD\u0026country=US\u0026variant=44993789722799\u0026stkn=ae255d640db4\u0026tw_source=google\u0026tw_adid=\u0026tw_campaign=18310208379\u0026tw_kwdid=\u0026gad_source=1\u0026gad_campaignid=17507316402\u0026gbraid=0AAAAADPT6TyWD62pBirGB-DmAXeqecUmI\u0026gclid=CjwKCAjwn67VBhBnEiwAXUIN1Rm5fO9oPm8QpEY_-aEAjNioOk5506j-i6mjZA-OANfbFIi_2jcOKhoCm4gQAvD_BwE",
+        "price":  120,
+        "currency":  "USD"
+    }
+]

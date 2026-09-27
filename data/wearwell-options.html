@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wearwell logo options</title>
+<style>
+  :root{--ink:#1d1b19;--muted:#7c766e;--line:#e7e2db;--bg:#f6f4f1;--accent:#b08968}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,sans-serif}
+  main{max-width:760px;margin:0 auto;padding:34px 22px 50px}
+  header{margin-bottom:28px}
+  h1{margin:0 0 7px;font-size:24px}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  .options{display:grid;gap:14px}
+  .option{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 20px 17px;box-shadow:0 8px 24px rgba(60,45,30,.05)}
+  .label{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:17px}
+  .label b{font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .label span{font-size:12px;color:var(--muted)}
+  .sample{min-height:66px;display:flex;align-items:center;padding:12px 14px;border-radius:11px;background:#faf8f6;border:1px solid #f0ebe5}
+  .sample.center{justify-content:center}
+  .editorial{font-family:Georgia,"Times New Roman",serif;font-size:31px;font-weight:600;letter-spacing:0}
+  .modern{font-size:28px;font-weight:700;letter-spacing:0}
+  .modern .soft{font-weight:400}
+  .luxury{font-family:Georgia,"Times New Roman",serif;font-size:28px;font-weight:400;letter-spacing:0}
+  .caps{font-size:23px;font-weight:700;letter-spacing:.16em}
+  .soft{font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:500;letter-spacing:0}
+  .under{border-bottom:2px solid var(--accent);padding-bottom:4px}
+  @media(max-width:520px){main{padding:24px 16px 40px}.option{padding:16px}.editorial,.soft{font-size:28px}.modern{font-size:25px}.luxury{font-size:26px}.caps{font-size:18px;letter-spacing:.12em}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Wearwell wordmark options</h1>
+    <p>Typography only, with no boxed W icon.</p>
+  </header>
+  <section class="options">
+    <article class="option"><div class="label"><b>01 Editorial</b><span>fashion magazine</span></div><div class="sample center editorial">Wearwell</div></article>
+    <article class="option"><div class="label"><b>02 Modern</b><span>clean product brand</span></div><div class="sample center modern">wear<span class="soft">well</span></div></article>
+    <article class="option"><div class="label"><b>03 Quiet luxury</b><span>light and refined</span></div><div class="sample center luxury">Wearwell</div></article>
+    <article class="option"><div class="label"><b>04 Fashion label</b><span>confident and crisp</span></div><div class="sample center caps">WEARWELL</div></article>
+    <article class="option"><div class="label"><b>05 Soft editorial</b><span>warm and personal</span></div><div class="sample center soft"><span class="under">Wearwell</span></div></article>
+  </section>
+</main>
+</body>
+</html>

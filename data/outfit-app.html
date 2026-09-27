@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Closet &middot; Outfit Builder</title>
+<style>
+  :root{
+    --bg:#f6f4f1; --card:#ffffff; --ink:#1d1b19; --muted:#7c766e;
+    --line:#e7e2db; --accent:#b08968; --accent-soft:#f0e9e2; --good:#178a4c;
+  }
+  *{box-sizing:border-box}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif; margin:0; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px; margin:0 auto; padding:28px 22px 60px}
+
+  header.top{display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:14px}
+  header.top .maintitle{min-width:0; min-height:124px; display:flex; flex-direction:column; justify-content:flex-start}
+  .brandmark{display:inline-flex; align-items:center; align-self:flex-start; margin:0 0 12px; color:var(--ink); text-decoration:none}
+  .brandmark .word{font-size:32px; letter-spacing:0; font-weight:700; line-height:1}
+  .brandmark .word .soft{font-weight:400}
+  header.top h1{font-size:22px; margin:0; letter-spacing:.1px; line-height:1.2}
+  header.top p{margin:6px 0 0; color:var(--muted); font-size:14px; line-height:1.4}
+  .mobile-menu{display:none; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:10px; width:38px; height:38px; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(60,45,30,.06)}
+  .mobile-menu svg{width:19px; height:19px}
+  .controls{display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; box-shadow:0 10px 30px rgba(60,45,30,.05)}
+  .field{display:flex; flex-direction:column; gap:5px}
+  .field label{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700}
+  .field select{font-size:14px; padding:9px 12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); min-width:150px}
+  .menuSelect{position:relative; min-width:150px}
+  .menuSelect .menuButton{width:100%; min-height:40px; padding:9px 34px 9px 12px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); font:inherit; text-align:left; cursor:pointer; position:relative}
+  .menuSelect .menuButton::after{content:""; position:absolute; right:13px; top:50%; width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor; transform:translateY(-65%) rotate(45deg)}
+  .menuSelect.open{z-index:90}
+  .menuSelect .menuList{display:none; position:absolute; left:0; right:0; top:calc(100% + 5px); padding:5px; border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:0 14px 30px rgba(29,27,25,.16); z-index:91}
+  .menuSelect.open .menuList{display:grid; gap:2px}
+  .menuSelect .menuOption{border:0; border-radius:8px; background:transparent; color:var(--ink); padding:9px 10px; font:inherit; text-align:left; cursor:pointer}
+  .menuSelect .menuOption:hover,.menuSelect .menuOption.active{background:var(--accent-soft)}
+  .menuSelect select{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none}
+  .btn{font-size:14px; font-weight:600; cursor:pointer; padding:10px 18px; border-radius:11px; border:1px solid var(--line); background:#fff; color:var(--ink)}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  .btn:disabled{opacity:.5; cursor:not-allowed}
+  .spacer{flex:1}
+
+  .board{display:grid; grid-template-columns:1.55fr .95fr; gap:22px; margin-top:22px}
+  @media (max-width:860px){ .board{grid-template-columns:1fr} }
+
+  .look, .panel{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 10px 30px rgba(60,45,30,.06)}
+  .look h2, .panel h2{margin:0 0 14px; font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted)}
+  .pieces{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  @media (max-width:520px){ .pieces{grid-template-columns:1fr} }
+  @media (max-width:520px){
+    .controls{display:grid; grid-template-columns:1fr; gap:16px; align-items:stretch; padding:18px 20px 16px}
+    .controls .field{width:100%; gap:6px}
+    .controls .field select{width:100%; min-width:0; height:46px; font-size:16px}
+    .menuSelect{width:100%; min-width:0}
+    .menuSelect .menuButton{min-height:46px; font-size:16px}
+    .controls .spacer{display:none}
+    .controls .field:last-child{align-items:flex-start; padding-top:0}
+    .controls .field:last-child label{display:none}
+    .controls #count{display:block; font-size:13px!important; line-height:1.2}
+    .controls #typeSeg{display:flex; width:100%; height:34px}
+    .controls #typeSeg button{flex:1; padding:4px 10px; font-size:13px}
+  }
+  .piece{position:relative; border-radius:14px; overflow:hidden; background:#faf8f6; border:1px solid var(--line)}
+  .piece img{display:block; width:100%; height:220px; object-fit:contain; padding:10px}
+  .piece .tag{position:absolute; top:10px; left:10px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:rgba(29,27,25,.72); padding:4px 9px; border-radius:999px}
+  .piece .cap{position:absolute; bottom:0; left:0; right:0; padding:20px 12px 10px; background:linear-gradient(to top,rgba(255,255,255,.97),rgba(255,255,255,0)); font-size:12px; color:#3a352f}
+  .piece .cap b{display:block; font-size:13px; color:var(--ink)}
+  .piece .nav{position:absolute; top:50%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; padding:0 6px; pointer-events:none}
+  .piece .nav button{pointer-events:auto; width:30px; height:30px; border-radius:50%; border:1px solid var(--line); background:rgba(255,255,255,.9); cursor:pointer; font-size:15px; line-height:1; color:#3a352f}
+  .piece .nav button:hover{background:#fff}
+
+  .list{list-style:none; margin:0 0 16px; padding:0}
+  .list li{display:flex; align-items:center; gap:12px; padding:9px 0; border-bottom:1px dashed var(--line)}
+  .list li:last-child{border-bottom:0}
+  .list .thumb{width:44px; height:44px; border-radius:10px; object-fit:contain; background:#faf8f6; border:1px solid var(--line); padding:3px; flex:none}
+  .list .who{font-size:13px; line-height:1.3}
+  .list .who span{display:block; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em}
+
+  .ai{margin-top:6px}
+  .ai .frame{border:1px dashed var(--line); border-radius:14px; background:#faf8f6; min-height:180px; display:flex; align-items:center; justify-content:center; overflow:hidden; text-align:center}
+  .ai .frame img{width:100%; display:block}
+  .ai .frame .ph{color:var(--muted); font-size:13px; padding:22px; line-height:1.5}
+  .cmd{margin-top:12px; background:#1d1b19; color:#f2ede7; border-radius:12px; padding:12px 14px; font-family:Consolas,Menlo,monospace; font-size:12px; line-height:1.5; word-break:break-all; position:relative}
+  .cmd .copy{position:absolute; top:8px; right:8px; font-size:11px; padding:4px 9px; border-radius:8px; border:1px solid #4a4640; background:#2c2926; color:#f2ede7; cursor:pointer}
+  .aihint{margin-top:10px; font-size:12px; color:var(--muted); line-height:1.5}
+  .empty{padding:26px; text-align:center; color:var(--muted); font-size:14px}
+  .err{padding:26px; text-align:center; color:#b23b3b; font-size:14px; line-height:1.6}
+  code{background:var(--accent-soft); padding:1px 6px; border-radius:5px; font-size:12px}
+
+  /* segmented control */
+  .seg{display:inline-flex; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff}
+  .seg button{border:0; background:#fff; padding:9px 15px; font-size:14px; font-weight:600; cursor:pointer; color:var(--muted)}
+  .seg button.active{background:var(--accent); color:#fff}
+  /* piece action buttons */
+  .piece .acts{position:absolute; top:8px; right:8px; display:flex; flex-direction:column; align-items:flex-end; gap:6px; z-index:2}
+  .piece .acts button{border:1px solid var(--line); background:rgba(255,255,255,.94); border-radius:8px; font-size:11px; font-weight:600; padding:4px 8px; cursor:pointer; color:#3a352f}
+  .piece .acts button:hover{background:#fff}
+  .piece .acts .rm{color:#b23b3b}
+  /* add chips */
+  .adds{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+  .adds .chip{border:1px dashed var(--line); background:#fff; border-radius:999px; padding:7px 13px; font-size:12.5px; font-weight:600; cursor:pointer; color:#3a352f}
+  .adds .chip:hover{border-color:var(--accent); color:var(--accent)}
+  /* catalog picker modal */
+  .modal{position:fixed; inset:0; background:rgba(29,27,25,.5); display:flex; align-items:center; justify-content:center; padding:24px; z-index:50}
+  .modal .box{background:#fff; border-radius:18px; width:min(940px,96vw); max-height:88vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.3)}
+  .modal .mhead{display:flex; align-items:center; gap:12px; padding:15px 18px; border-bottom:1px solid var(--line); flex-wrap:wrap}
+  .modal .mhead h3{margin:0; font-size:16px}
+  .modal .mhead .x{margin-left:auto; border:1px solid var(--line); background:#fff; border-radius:9px; width:34px; height:34px; font-size:18px; cursor:pointer; line-height:1}
+  .modal .cats{display:flex; gap:7px; flex-wrap:wrap}
+  .modal .cats button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 12px; font-size:12px; font-weight:600; cursor:pointer; color:var(--muted)}
+  .modal .cats button.active{background:var(--ink); color:#fff; border-color:var(--ink)}
+  .modal .mcount{margin-left:auto; font-size:12px; color:var(--muted)}
+  .modal .mfilters{display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:12px 18px; border-bottom:1px solid var(--line); background:#faf8f6}
+  .modal .filtergroup{display:flex; flex-direction:column; gap:7px; width:100%}
+  .modal .filterlabel{font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+  .modal .filtertools{display:flex; align-items:center; gap:12px; flex-wrap:wrap; width:100%; padding-top:2px}
+  .modal .brandsel{border:1px solid var(--line); border-radius:9px; padding:6px 10px; font-size:13px; background:#fff; cursor:pointer}
+  .modal .ctxtoggle{font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; cursor:pointer}
+  .modal .mgrid{overflow:auto; padding:18px; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px}
+  .modal .gitem{border:1px solid var(--line); border-radius:14px; overflow:hidden; cursor:pointer; background:#faf8f6; transition:border-color .1s, box-shadow .1s; display:flex; flex-direction:column}
+  .modal .gitem:hover{border-color:var(--accent); box-shadow:0 6px 16px rgba(0,0,0,.08)}
+  .modal .gitem.sel{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+  .modal .gitem img{display:block; width:100%; height:auto; aspect-ratio:4 / 3; max-height:250px; object-fit:contain; padding:12px; background:#fff}
+  .modal .gitem .gcap{font-size:12px; padding:9px 11px; border-top:1px solid var(--line); color:#3a352f; margin-top:auto}
+  .modal .gitem .gcap b{display:block; font-size:13px}
+  .modal .empty2{padding:44px; text-align:center; color:var(--muted); grid-column:1/-1}
+  .modal .mfoot{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 18px; border-top:1px solid var(--line)}
+  .modal .pnums{display:flex; gap:6px; flex-wrap:wrap; justify-content:center}
+  .modal .pnum{border:1px solid var(--line); background:#fff; border-radius:8px; min-width:32px; height:32px; font-size:13px; font-weight:600; cursor:pointer; color:#3a352f}
+  .modal .pnum.ellipsis{display:inline-flex; align-items:center; justify-content:center; min-width:24px; border-color:transparent; background:transparent; color:var(--muted); font-size:16px; cursor:default}
+  .modal .pnum.active{background:var(--accent); color:#fff; border-color:var(--accent)}
+  .modal .pnav{border:1px solid var(--line); background:#fff; border-radius:9px; padding:7px 13px; font-size:13px; font-weight:600; cursor:pointer; color:#3a352f}
+  .modal .pnav:disabled{opacity:.4; cursor:default}
+  /* price + shop link */
+  .piece .cap .caprow{display:flex; align-items:baseline; justify-content:space-between; gap:8px}
+  .piece .cap .price{font-weight:700; color:var(--ink); font-size:13px; white-space:nowrap}
+  .piece .cap .shop{display:block; margin-top:5px; font-size:11.5px; font-weight:600; color:var(--accent); text-decoration:none}
+  .piece .cap .shop:hover{text-decoration:underline}
+  .list .who b{color:var(--ink)}
+  .list .who .lshop{display:block; margin-top:3px; font-size:11px; font-weight:600; color:var(--accent); text-decoration:none}
+  .list .who .lshop:hover{text-decoration:underline}
+  .list .lfav{margin-left:auto; flex:none; align-self:center; border:1px solid var(--line); background:#fff; border-radius:9px; width:34px; height:34px; font-size:16px; cursor:pointer; color:#b23b3b}
+  .list .lfav.on{background:#fbecea}
+  .total{display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:12px 2px 6px; margin-bottom:8px; border-top:1px solid var(--line)}
+  .total span{font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted)}
+  .total b{font-size:20px; color:var(--ink); text-align:right}
+  .total small{display:block; font-size:11px; font-weight:500; color:var(--muted); letter-spacing:0; text-transform:none}
+  .modal .gitem .gprice{font-weight:700; color:var(--ink)}
+  .modal .gitem .gshop{display:block; margin-top:5px; font-size:11.5px; font-weight:600; color:var(--accent); text-decoration:none}
+  .modal .gitem .gshop:hover{text-decoration:underline}
+  /* mode nav + starter looks */
+  .modenav{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(90px, 1fr));
+    gap:8px;
+    margin:0 0 22px;
+    padding:5px;
+    border:1px solid var(--line);
+    background:#f1ede8;
+    border-radius:16px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+    align-items:stretch;
+  }
+  .modenav button{
+    border:0;
+    background:transparent;
+    border-radius:12px;
+    height:48px;
+    width:100%;
+    padding:8px 10px;
+    font-size:12px;
+    line-height:1.1;
+    font-weight:700;
+    cursor:pointer;
+    color:var(--muted);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    text-align:center;
+    transition:all .12s ease;
+    white-space:nowrap;
+    min-width:0;
+  }
+  .modenav button svg{width:16px; height:16px; flex:none}
+  .modenav button.active{
+    background:var(--ink);
+    color:#fff;
+    box-shadow:0 4px 12px rgba(29,27,25,.18);
+    border-radius:12px;
+    transform:none;
+  }
+
+  /* app shell with left sidebar */
+  .shell{max-width:1360px; margin:0 auto; display:flex; align-items:flex-start; gap:22px; padding:24px 20px 60px}
+  .sidebar{width:236px; flex:none; position:sticky; top:24px; display:flex; flex-direction:column; gap:14px; transition:width .18s ease}
+  .sidehead{display:flex; justify-content:flex-end}
+  .collapse{border:1px solid var(--line); background:var(--card); border-radius:10px; width:34px; height:34px; flex:none; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--muted); box-shadow:0 6px 18px rgba(60,45,30,.05)}
+  .collapse svg{width:18px; height:18px; transition:transform .18s}
+  .shell.collapsed .collapse svg{transform:rotate(180deg)}
+  .collapse:hover{color:var(--ink); border-color:var(--accent)}
+  .profile{width:100%; text-align:left; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px; display:flex; align-items:center; gap:12px; cursor:pointer; box-shadow:0 10px 30px rgba(60,45,30,.05)}
+  .profile:hover{border-color:var(--accent)}
+  .profile.active{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
+  .avatar{width:42px; height:42px; flex:none; border-radius:50%; background:linear-gradient(135deg,var(--accent),#caa989); color:#fff; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800}
+  .avatar.big{width:64px; height:64px; font-size:26px}
+  .pinfo{min-width:0}
+  .pinfo b{display:block; font-size:15px; line-height:1.2}
+  .pinfo span{font-size:12px; color:var(--muted)}
+  .sidenav{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:8px; display:flex; flex-direction:column; gap:2px; box-shadow:0 10px 30px rgba(60,45,30,.05)}
+  .sideitem{display:flex; align-items:center; gap:12px; width:100%; border:0; background:transparent; border-radius:11px; padding:12px; font-size:14.5px; font-weight:600; cursor:pointer; color:var(--ink); text-align:left; white-space:nowrap}
+  .sideitem:hover{background:var(--accent-soft)}
+  .sideitem.active{background:var(--ink); color:#fff}
+  .sideitem .ico{width:22px; height:22px; flex:none; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+  .sideitem .ico svg{width:20px; height:20px}
+  .sideitem.active .ico{color:#fff}
+  /* collapsed rail */
+  .shell.collapsed .sidebar{width:64px}
+  .shell.collapsed .pinfo, .shell.collapsed .sideitem .txt{display:none}
+  .shell.collapsed .profile{justify-content:center; padding:12px}
+  .shell.collapsed .sideitem{justify-content:center; padding:12px}
+  .shell .wrap{flex:1; min-width:0; max-width:none; margin:0; padding:0}
+  /* profile / settings view */
+  .profcard{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; display:flex; align-items:center; gap:18px; box-shadow:0 10px 30px rgba(60,45,30,.06); flex-wrap:wrap}
+  .profcard h2{margin:0; font-size:22px}
+  .profcard p{margin:3px 0 8px; color:var(--muted); font-size:14px}
+  .planbadge{display:inline-block; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#7a5a34; background:linear-gradient(135deg,#f3e4cf,#e7cfae); border:1px solid #dcbf98; padding:3px 10px; border-radius:999px}
+  .profcard .spacer{flex:1}
+  .setgrid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px}
+  @media (max-width:860px){ .setgrid{grid-template-columns:1fr} }
+  .setcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; box-shadow:0 10px 30px rgba(60,45,30,.05)}
+  .setcard h3{margin:0 0 14px; font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted)}
+  .setrow{display:flex; flex-direction:column; gap:5px; margin-bottom:14px}
+  .setrow label{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700}
+  .setrow input{font-size:14px; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink)}
+  .togrow{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0; border-bottom:1px dashed var(--line)}
+  .togrow:last-child{border-bottom:0}
+  .togrow .tl{font-size:14px; font-weight:600}
+  .togrow .ts{font-size:12px; color:var(--muted); margin-top:2px}
+  .switch{width:44px; height:26px; border-radius:999px; border:1px solid var(--line); background:#e9e3db; position:relative; cursor:pointer; flex:none}
+  .switch.on{background:var(--accent); border-color:var(--accent)}
+  .switch::after{content:""; position:absolute; top:2px; left:2px; width:20px; height:20px; border-radius:50%; background:#fff; transition:left .15s}
+  .switch.on::after{left:20px}
+  @media (max-width:860px){
+    .shell{display:block; padding:0}
+    .sidebar{width:min(300px,86vw)!important; height:100dvh; position:fixed; top:0; left:0; z-index:40; padding:18px 14px; background:var(--bg); box-shadow:16px 0 36px rgba(29,27,25,.16); transform:translateX(-105%); transition:transform .2s ease; flex-direction:column; flex-wrap:nowrap; align-items:stretch}
+    .shell.menu-open .sidebar{transform:translateX(0)}
+    .shell.menu-open::after{content:""; position:fixed; inset:0; z-index:30; background:rgba(29,27,25,.28)}
+    .sidehead{display:flex; justify-content:flex-end}
+    .profile{flex:none}
+    .sidenav{flex:none; flex-direction:column}
+    .collapse{transform:rotate(180deg)}
+    .shell.collapsed .pinfo, .shell.collapsed .sideitem .txt{display:block}
+    .sidenav .sideitem, .shell.collapsed .sidenav .sideitem{justify-content:flex-start; text-align:left}
+    .shell.collapsed .profile{justify-content:flex-start; padding:14px}
+    .shell .wrap{padding:18px 16px 46px}
+    .mobile-menu{display:inline-flex; position:absolute; top:18px; left:16px; z-index:2}
+    header.top{display:block; text-align:left; margin:0 auto 14px; padding-top:8px; max-width:560px}
+    header.top .maintitle{height:150px; min-height:150px; align-items:stretch}
+    header.top .brandmark{align-self:center; margin-left:0; margin-bottom:20px}
+    header.top p{max-width:none; min-height:58.8px; margin-top:10px; margin-bottom:0}
+    body[data-mode="closet"] header.top{margin-bottom:0}
+    body[data-mode="profile"] header.top{margin-bottom:4px}
+    body[data-mode="closet"] header.top .maintitle,
+    body[data-mode="profile"] header.top .maintitle{height:auto; min-height:0}
+    .modenav{max-width:560px; margin:0 auto 24px; padding:6px; gap:6px}
+    .modenav button{height:56px; padding:8px 8px; gap:4px}
+    .modal{padding:12px 6px}
+    .modal .box{width:100%; max-height:92vh}
+    .modal .mgrid{grid-template-columns:1fr; grid-auto-rows:max-content; align-items:start; align-content:start; min-height:0; padding:12px 14px; gap:12px}
+    .modal .gitem{min-height:0; height:auto}
+    .modal .gitem img{height:auto; aspect-ratio:1.35 / 1; max-height:210px; object-fit:contain; padding:10px}
+    .modal .mfoot{padding:10px 12px; gap:6px}
+    .modal .pnums{flex-wrap:nowrap; gap:4px}
+    .modal .pnum{min-width:28px; height:30px}
+    .modal .pnav{padding:6px 8px}
+    #buildView, #presetView, #closetView, #profileView{max-width:900px; margin-left:auto; margin-right:auto}
+    #closetView .pintro{margin-top:0; margin-bottom:30px}
+  }
+  .pintro{text-align:left; color:var(--muted); font-size:14px; margin:0 0 22px}
+  #presetGrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px}
+  .pcard{border:1px solid var(--line); border-radius:18px; overflow:hidden; background:var(--card); cursor:pointer; box-shadow:0 10px 30px rgba(60,45,30,.06); transition:transform .12s, box-shadow .12s}
+  .pcard:hover{transform:translateY(-3px); box-shadow:0 16px 40px rgba(60,45,30,.12)}
+  .pcollage{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:#efeae4}
+  .pcollage img{width:100%; height:120px; object-fit:contain; padding:8px; background:#faf8f6; display:block}
+  .pmeta{padding:16px 18px 18px}
+  .pmeta h3{margin:0 0 4px; font-size:17px; color:var(--ink)}
+  .pmeta p{margin:0 0 14px; font-size:13px; color:var(--muted); line-height:1.4; min-height:2.8em}
+  .prow{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px}
+  .pchip{font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#7a6f63; background:var(--accent-soft); padding:5px 10px; border-radius:999px}
+  .prow b{font-size:18px; color:var(--ink)}
+  .pbtn{width:100%}
+  .btn.fav{background:#fff; border-color:var(--accent); color:var(--accent)}
+  .btn.fav:hover{background:var(--accent-soft)}
+  .btn.favon{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
+  .favbtns{display:flex; gap:8px}
+  .favbtns .pbtn{flex:1; width:auto}
+  .favbtns .favrm{flex:none; width:44px; padding:10px 0; color:#b23b3b; border-color:var(--line)}
+  .favbtns .favrm:hover{background:#fbecea}
+  .favtabs{display:flex; gap:8px; justify-content:center; margin:0 0 20px}
+  .favtabs button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:8px 16px; font-size:13px; font-weight:700; color:var(--muted); cursor:pointer}
+  .favtabs button.active{background:var(--ink); color:#fff; border-color:var(--ink)}
+  #favGrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px}
+  .brand-group{grid-column:1/-1; display:flex; flex-direction:column; gap:12px}
+  .brand-header{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:800; padding:0 4px}
+  .brand-row{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px}
+  .piece .acts .favi{color:#b23b3b}
+  .fcard{position:relative; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--card); box-shadow:0 8px 22px rgba(60,45,30,.05)}
+  .fcard img{width:100%; height:220px; object-fit:contain; padding:12px; background:#faf8f6; display:block; cursor:pointer}
+  .fcardmeta{padding:12px 14px 16px; font-size:13px; color:#3a352f; cursor:pointer}
+  .fcardmeta b{color:var(--ink)}
+  .fcardmeta .lshop{display:block; margin-top:6px; font-size:11.5px; font-weight:600; color:var(--accent); text-decoration:none}
+  .fcardfav{position:absolute; top:10px; right:10px; z-index:2; border:1px solid var(--line); background:#fff; border-radius:10px; width:34px; height:34px; font-size:16px; cursor:pointer; color:#b23b3b}
+  .modal .gitem{position:relative}
+  .modal .gfav{position:absolute; top:8px; right:8px; z-index:2; border:1px solid var(--line); background:rgba(255,255,255,.94); border-radius:8px; width:30px; height:30px; font-size:14px; cursor:pointer; color:#b23b3b; line-height:1}
+  .modal .gfav.on{background:#fff}
+
+  /* pro badge */
+  .pro{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#7a5a34; background:linear-gradient(135deg,#f3e4cf,#e7cfae); border:1px solid #dcbf98; padding:2px 7px; border-radius:999px; vertical-align:middle; margin-left:7px}
+
+  /* closet (my closet) view */
+  .sources{display:flex; flex-direction:column; gap:18px; margin-top:4px}
+  .srccard{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:0 10px 30px rgba(60,45,30,.06); display:flex; flex-direction:column}
+  .srccard .eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); font-weight:700; margin-bottom:6px}
+  .srccard h3{margin:0 0 8px; font-size:21px}
+  .srccard p.desc{margin:0 0 16px; font-size:14px; color:var(--muted); line-height:1.55}
+  .srccard .meta{font-size:12.5px; color:var(--muted); margin-bottom:16px}
+  .srccard .meta b{color:var(--ink)}
+  .srccard .spacer{flex:1}
+  /* essentials banner (horizontal) */
+  .srccard.ess{flex-direction:row; align-items:center; gap:26px; flex-wrap:wrap}
+  .srccard.ess .esstext{flex:1; min-width:250px; display:flex; flex-direction:column; align-items:flex-start}
+  .srccard.ess .esstext .desc{margin-bottom:12px}
+  .srccard.ess .esstext .btn{margin-top:4px}
+  .esspreview{flex:none; display:grid; grid-template-columns:repeat(4,74px); grid-auto-rows:74px; gap:10px}
+  .esspreview img{width:74px; height:74px; object-fit:contain; background:#faf8f6; border:1px solid var(--line); border-radius:12px; padding:6px; display:block}
+  @media (max-width:860px){
+    .srccard.ess{flex-direction:column; align-items:stretch}
+    .esspreview{grid-template-columns:repeat(auto-fill,minmax(64px,1fr)); grid-auto-rows:1fr}
+    .esspreview img{width:100%; height:auto; aspect-ratio:1}
+  }
+  /* add-your-own form */
+  .addform{display:flex; flex-direction:column; gap:12px}
+  .addform .row{display:flex; flex-direction:column; gap:5px}
+  .addform label{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:700}
+  .addform input[type=url], .addform input[type=text], .addform select{font-size:14px; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); width:100%}
+  .addform .two{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .occchips{display:flex; flex-wrap:wrap; gap:7px}
+  .occchips button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:6px 12px; font-size:12.5px; font-weight:600; cursor:pointer; color:#3a352f}
+  .occchips button.on{background:var(--accent); border-color:var(--accent); color:#fff}
+  .addform .addbtn{margin-top:4px}
+  .addnote{font-size:11.5px; color:var(--muted); line-height:1.5; margin-top:2px}
+  /* my items grid */
+  .mysec{margin-top:26px}
+  .mysec h3{font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 14px}
+  #myGrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px}
+  .mycard{position:relative; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#faf8f6}
+  .mycard img{width:100%; height:210px; object-fit:contain; padding:12px; display:block; background:#fff}
+  .mycard .mcap{font-size:12px; padding:10px 12px; border-top:1px solid var(--line); color:#3a352f}
+  .mycard .mcap b{display:block; font-size:13px; color:var(--ink)}
+  .mycard .mrm{position:absolute; top:8px; right:8px; z-index:2; border:1px solid var(--line); background:rgba(255,255,255,.94); border-radius:8px; width:30px; height:30px; font-size:15px; cursor:pointer; color:#b23b3b; line-height:1}
+  .myempty{grid-column:1/-1; padding:34px; text-align:center; color:var(--muted); font-size:14px; border:1px dashed var(--line); border-radius:14px; background:#faf8f6}
+</style>
+</head>
+<body>
+<div class="shell" id="shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidehead">
+      <button class="collapse" id="collapseBtn" onclick="toggleSidebar()" title="Collapse menu" aria-label="Collapse menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="9" y1="4" x2="9" y2="20"/><path d="M15 9l-2 3 2 3"/></svg></button>
+    </div>
+    <button class="profile" data-side="profile" onclick="setMode('profile')">
+      <div class="avatar">G</div>
+      <div class="pinfo">
+        <b>Guest</b>
+        <span>View profile</span>
+      </div>
+    </button>
+    <nav class="sidenav">
+      <button class="sideitem" data-side="build" onclick="openBuilder()"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 0 0-1 3.7c.6.35 1 .9 1 1.6"/><path d="M12 8.3 3.4 14a1.5 1.5 0 0 0 .8 2.8h15.6a1.5 1.5 0 0 0 .8-2.8L12 8.3z"/></svg></span><span class="txt">Style Studio</span></button>
+      <button class="sideitem" data-side="closet" onclick="setMode('closet')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="1.6"/><line x1="12" y1="2.5" x2="12" y2="21.5"/><line x1="9.4" y1="9" x2="9.4" y2="12"/><line x1="14.6" y1="9" x2="14.6" y2="12"/></svg></span><span class="txt">My Closet</span></button>
+    </nav>
+  </aside>
+
+  <div class="wrap">
+
+  <header class="top">
+    <button class="mobile-menu" onclick="toggleSidebar()" title="Open menu" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    <div class="maintitle">
+      <a class="brandmark" href="#" aria-label="Wearwell home"><span class="word">wear<span class="soft">well</span></span></a>
+      <h1 id="pageTitle">Style Studio</h1>
+      <p id="pageSub">Pick occasion, weather &amp; outfit type. Change any piece from the full catalog, add or remove shoes/bag/belt, then generate the AI photo.</p>
+    </div>
+  </header>
+
+  <div class="modenav" id="modeNav">
+    <button data-mode="presets" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.8L18.5 9.5l-4.8 1.7L12 16l-1.7-4.8L5.5 9.5l4.8-1.7z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>Starter looks</button>
+    <button data-mode="build"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>Build your own</button>
+    <button data-mode="favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.4 5.4 0 0 0-7.7 0l-1.1 1.1-1.1-1.1a5.4 5.4 0 1 0-7.7 7.7l1.1 1.1 7.7 7.6 7.7-7.6 1.1-1.1a5.4 5.4 0 0 0 0-7.7z"/></svg>Favorites</button>
+  </div>
+
+  <section id="presetView">
+    <p class="pintro">Not sure where to start? Pick a ready-made look, then tweak anything you like.</p>
+    <div id="presetGrid"></div>
+  </section>
+
+  <div id="buildView" style="display:none">
+  <div class="controls">
+    <div class="field">
+      <label for="occasion">Occasion</label>
+      <select id="occasion"></select>
+    </div>
+    <div class="field">
+      <label for="weather">Weather</label>
+      <select id="weather"></select>
+    </div>
+    <div class="field">
+      <label>What to wear</label>
+      <div class="seg" id="typeSeg">
+        <button data-type="separates" class="active">Top + Bottom</button>
+        <button data-type="dress">Dress</button>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <span id="count" style="font-size:12px;color:var(--muted)"></span>
+    </div>
+  </div>
+
+  <div id="stage"></div>
+  </div>
+
+  <section id="favView" style="display:none">
+    <div class="favtabs">
+      <button data-favtab="items" class="active" onclick="setFavTab('items')">Saved items</button>
+      <button data-favtab="looks" onclick="setFavTab('looks')">Saved looks</button>
+    </div>
+    <div id="favGrid"></div>
+  </section>
+
+  <section id="closetView" style="display:none">
+    <p class="pintro">Choose where your outfits come from &mdash; start with our curated closet, or build your own from things you already own.</p>
+    <div class="sources">
+
+      <div class="srccard ess">
+        <div class="esstext">
+          <div class="eyebrow">Included &middot; Free</div>
+          <h3>The Essentials</h3>
+          <p class="desc">Clean, neutral and relatable &mdash; the pieces worth owning when you don&rsquo;t know what to buy. Hand-picked so every outfit just works.</p>
+          <div class="meta"><b id="essCount">0</b> curated pieces ready to mix &amp; match.</div>
+          <button class="btn primary" onclick="setMode('build')">Browse the curated closet &#8594;</button>
+        </div>
+        <div class="esspreview" id="essPreview"></div>
+      </div>
+
+      <div class="srccard">
+        <div class="eyebrow">Your wardrobe <span class="pro">Pro</span></div>
+        <h3>Add your own</h3>
+        <p class="desc">Paste a link to something you&rsquo;ve bought (or want to), tell us what it is, and we&rsquo;ll add it to your personal closet so you can style it into any look.</p>
+        <div class="addform">
+          <div class="row">
+            <label for="myUrl">Product link</label>
+            <input type="url" id="myUrl" placeholder="https://www.brand.com/product/...">
+          </div>
+          <div class="two">
+            <div class="row">
+              <label for="myCategory">Category</label>
+              <select id="myCategory"></select>
+            </div>
+            <div class="row">
+              <label for="myWeather">Weather</label>
+              <select id="myWeather"></select>
+            </div>
+          </div>
+          <div class="row">
+            <label>Occasions</label>
+            <div class="occchips" id="myOcc"></div>
+          </div>
+          <div class="two">
+            <div class="row">
+              <label for="myBrand">Brand <span style="text-transform:none;letter-spacing:0;font-weight:500">(optional)</span></label>
+              <input type="text" id="myBrand" placeholder="e.g. Zara">
+            </div>
+            <div class="row">
+              <label for="myPrice">Price <span style="text-transform:none;letter-spacing:0;font-weight:500">(optional)</span></label>
+              <input type="text" id="myPrice" placeholder="e.g. 49">
+            </div>
+          </div>
+          <button class="btn primary addbtn" onclick="addMyItem()">&#43; Add to my closet</button>
+          <p class="addnote">Mockup: items are saved in this browser only. In the full app, pasting a link will automatically pull the photo and price for you.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mysec">
+      <h3>My pieces</h3>
+      <div id="myGrid"></div>
+    </div>
+  </section>
+
+  <section id="profileView" style="display:none">
+    <div class="profcard">
+      <div class="avatar big">G</div>
+      <div>
+        <h2>Guest</h2>
+        <p>guest@example.com</p>
+        <span class="planbadge">Free plan</span>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn primary">Upgrade to Pro</button>
+    </div>
+    <div class="setgrid">
+      <div class="setcard">
+        <h3>Account</h3>
+        <div class="setrow">
+          <label for="setName">Name</label>
+          <input type="text" id="setName" value="Guest">
+        </div>
+        <div class="setrow">
+          <label for="setEmail">Email</label>
+          <input type="email" id="setEmail" value="guest@example.com">
+        </div>
+        <div class="setrow">
+          <label for="setSize">Usual size</label>
+          <input type="text" id="setSize" placeholder="e.g. M / US 8">
+        </div>
+      </div>
+      <div class="setcard">
+        <h3>Preferences</h3>
+        <div class="togrow">
+          <div><div class="tl">AI photo generation</div><div class="ts">Generate styled photos of your outfits</div></div>
+          <div class="switch on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="togrow">
+          <div><div class="tl">Add your own pieces</div><div class="ts">Save items from any store into My Closet</div></div>
+          <div class="switch" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="togrow">
+          <div><div class="tl">Email me new starter looks</div><div class="ts">A few fresh outfit ideas each month</div></div>
+          <div class="switch on" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+</div>
+<div id="modalHost"></div>
+
+<script>
+const SLOT_ORDER = ['Layer','Top','Dress','Bottom','Shoes','Bag','Accessory'];
+const MAIN_ORDER = ['Layer','Top','Dress','Bottom','Shoes'];   // one item each
+const OPTIONAL_MAIN = ['Layer','Shoes'];                       // main slots you can add/remove
+const ACCESSORY_SLOTS = ['Bag','Accessory'];                   // multi: one item per category
+const ACC_LABEL = { Bags:'Bag', Belts:'Belt' };
+let ACC_CATS = [];       // accessory categories in catalog order, e.g. ['Bags','Belts']
+let CATALOG = [];
+let bySlot = {};
+let BYID = {};
+let pools = {};          // filtered pools for the current context
+let selection = {};      // key -> item  (main slot name, or accessory category name)
+let outfitType = 'separates';   // 'separates' (top+bottom) or 'dress'
+// catalog picker modal state
+let pickerSlots = null, pickerAcc = false;
+let pickerCat = 'All', pickerBrand = 'All', pickerCtx = true, pickerPage = 0;
+const PAGE_SIZE = 8;
+let curImgName = '', curCmd = '';   // current combo's image filename + generate command
+let PRESETS = [];
+let FAVORITES = [];       // saved whole outfits
+let FAV_ITEMS = [];       // saved individual item ids
+let favTab = 'items';     // favorites sub-tab: 'items' | 'looks'
+let appMode = 'build';      // 'presets' (starter looks) | 'build' | 'favorites'
+
+// --- My Closet (add-your-own) state ---
+let CATEGORIES = [];       // from taxonomy.json
+let OCCASIONS = [];        // from taxonomy.json
+let MY_ITEMS = [];         // user-added items (localStorage only, mockup)
+let myOccSel = [];         // occasions picked in the add form
+const SLOT_OF_CATEGORY = {
+  'Shirts':'Top','T-shirts':'Top','Going-out tops':'Top','Sweaters':'Top',
+  'Blazers':'Layer','Jackets':'Layer','Vests':'Top',
+  'Jeans':'Bottom','Pants':'Bottom','Skirts':'Bottom',
+  'Dresses':'Dress',
+  'Shoes':'Shoes','Sneakers':'Shoes','Booties':'Shoes','Sandals':'Shoes',
+  'Bags':'Bag','Belts':'Accessory'
+};
+const keyForItem = it => ACCESSORY_SLOTS.includes(it.slot) ? it.category : it.slot;
+const accLabel = cat => ACC_LABEL[cat] || cat.replace(/s$/,'');
+const money = p => (p == null || p === '') ? '' : (typeof p === 'number' ? '$' + p : (/^\d+(\.\d+)?$/.test(String(p).trim()) ? '$' + String(p).trim() : String(p)));
+
+const $ = s => document.querySelector(s);
+const rand = arr => arr[Math.floor(Math.random()*arr.length)];
+
+function matchesContext(item, occ, weather){
+  const okOcc = Array.isArray(item.occasions) && item.occasions.includes(occ);
+  const okWeather = (weather === 'All year') || (item.weather === 'All year') || (item.weather === weather);
+  return okOcc && okWeather;
+}
+
+function computePools(){
+  const occ = $('#occasion').value, weather = $('#weather').value;
+  pools = {};
+  for(const slot of SLOT_ORDER){
+    pools[slot] = (bySlot[slot]||[]).filter(it => matchesContext(it, occ, weather));
+  }
+  const total = SLOT_ORDER.reduce((n,s)=>n+pools[s].length,0);
+  $('#count').textContent = total + ' items match';
+}
+
+function buildOutfit(){
+  computePools();
+  selection = {};
+  if(outfitType === 'dress'){
+    if(pools['Dress'].length) selection['Dress'] = pools['Dress'][0];
+  } else {
+    if(pools['Top'].length) selection['Top'] = pools['Top'][0];
+    if(pools['Bottom'].length) selection['Bottom'] = pools['Bottom'][0];
+  }
+  if(pools['Shoes'].length) selection['Shoes'] = pools['Shoes'][0];
+  if(pools['Bag'].length){ const b = pools['Bag'][0]; selection[keyForItem(b)] = b; }
+  if($('#weather').value === 'Cold' && pools['Layer'].length) selection['Layer'] = pools['Layer'][0];
+  render();
+}
+
+function setType(type){
+  outfitType = type;
+  document.querySelectorAll('#typeSeg button').forEach(b => b.classList.toggle('active', b.dataset.type === type));
+  computePools();
+  if(type === 'dress'){
+    delete selection['Top']; delete selection['Bottom'];
+    if(!selection['Dress'] && pools['Dress'].length) selection['Dress'] = pools['Dress'][0];
+  } else {
+    delete selection['Dress'];
+    if(!selection['Top'] && pools['Top'].length) selection['Top'] = pools['Top'][0];
+    if(!selection['Bottom'] && pools['Bottom'].length) selection['Bottom'] = pools['Bottom'][0];
+  }
+  render();
+}
+
+function removeSlot(key){ delete selection[key]; render(); }
+
+function openPicker(slot){ pickerSlots = [slot]; pickerAcc = false; pickerCat = 'All'; pickerBrand = 'All'; pickerCtx = true; pickerPage = 0; renderModal(); }
+function openAccPicker(cat){ pickerSlots = ACCESSORY_SLOTS.slice(); pickerAcc = true; pickerCat = cat || 'All'; pickerBrand = 'All'; pickerCtx = true; pickerPage = 0; renderModal(); }
+function closePicker(){ pickerSlots = null; renderModal(); }
+function setPickerCat(cat){ pickerCat = cat; pickerPage = 0; renderModal(); }
+function setPickerBrand(b){ pickerBrand = b; pickerPage = 0; renderModal(); }
+function togglePickerCtx(){ pickerCtx = !pickerCtx; pickerPage = 0; renderModal(); }
+function setPickerPage(p){ pickerPage = p; renderModal(); }
+function pickItem(id){
+  const it = BYID[id];
+  if(it) selection[keyForItem(it)] = it;
+  pickerSlots = null; renderModal(); render();
+}
+
+function renderModal(){
+  const host = $('#modalHost');
+  if(!pickerSlots){ host.innerHTML = ''; return; }
+
+  let all = [];
+  for(const s of pickerSlots){ all = all.concat(bySlot[s] || []); }
+  const source = pickerCtx ? all.filter(i => matchesContext(i, $('#occasion').value, $('#weather').value)) : all;
+
+  const cats = ['All', ...Array.from(new Set(all.map(i => i.category)))];
+  const brands = ['All', ...Array.from(new Set(all.map(i => i.brand))).sort()];
+
+  const items = source.filter(i =>
+    (pickerCat === 'All' || i.category === pickerCat) &&
+    (pickerBrand === 'All' || i.brand === pickerBrand)
+  );
+
+  const pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  if(pickerPage > pages - 1) pickerPage = pages - 1;
+  if(pickerPage < 0) pickerPage = 0;
+  const pageItems = items.slice(pickerPage * PAGE_SIZE, pickerPage * PAGE_SIZE + PAGE_SIZE);
+
+  const isSel = i => { const cur = selection[keyForItem(i)]; return cur && cur.id === i.id; };
+  const title = pickerAcc ? 'Add an accessory' : 'Choose a ' + pickerSlots[0];
+  const catBtns = cats.map(c => `<button class="${c === pickerCat ? 'active' : ''}" onclick="setPickerCat('${c}')">${c}</button>`).join('');
+  const brandOpts = brands.map(b => `<option value="${b}" ${b === pickerBrand ? 'selected' : ''}>${b === 'All' ? 'All brands' : b}</option>`).join('');
+
+  const grid = pageItems.length
+    ? pageItems.map(i => `<div class="gitem ${isSel(i) ? 'sel' : ''}" onclick="pickItem(${i.id})"><button class="gfav ${isItemFav(i.id) ? 'on' : ''}" onclick="event.stopPropagation();toggleItemFav(${i.id})" title="Favorite">${isItemFav(i.id) ? '&#9829;' : '&#9825;'}</button><img src="${i.image}" alt="" loading="lazy"><div class="gcap"><b>${i.category}</b>${i.brand}${money(i.price) ? ` &middot; <span class="gprice">${money(i.price)}</span>` : ''}${i.url ? `<a class="gshop" href="${i.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View in store &#8599;</a>` : ''}</div></div>`).join('')
+    : `<div class="empty2">Nothing matches these filters. Try &ldquo;All&rdquo; or untick &ldquo;Match occasion &amp; weather&rdquo;.</div>`;
+
+  const pageButton = p => `<button class="pnum ${p === pickerPage ? 'active' : ''}" onclick="setPickerPage(${p})">${p + 1}</button>`;
+  const visiblePages = window.matchMedia('(max-width:520px)').matches ? 4 : 6;
+  const windowStart = Math.min(Math.max(0, pickerPage), Math.max(0, pages - visiblePages));
+  const windowEnd = Math.min(pages, windowStart + visiblePages);
+  const nums = Array.from({length:windowEnd - windowStart}, (_, i) => pageButton(windowStart + i));
+  const foot = pages > 1 ? `
+        <div class="mfoot">
+          <button class="pnav" ${pickerPage === 0 ? 'disabled' : ''} onclick="setPickerPage(${pickerPage - 1})">&#8249; Prev</button>
+          <div class="pnums">${nums.join('')}</div>
+          <button class="pnav" ${pickerPage >= pages - 1 ? 'disabled' : ''} onclick="setPickerPage(${pickerPage + 1})">Next &#8250;</button>
+        </div>` : '';
+
+  host.innerHTML = `
+    <div class="modal" onclick="if(event.target===this)closePicker()">
+      <div class="box">
+        <div class="mhead">
+          <h3>${title}</h3>
+          <span class="mcount">${items.length} item${items.length === 1 ? '' : 's'}</span>
+          <button class="x" onclick="closePicker()">&times;</button>
+        </div>
+        <div class="mfilters">
+          <div class="filtergroup">
+            <span class="filterlabel">Category</span>
+            <div class="cats">${catBtns}</div>
+          </div>
+          <div class="filtertools">
+            <span class="filterlabel">Refine</span>
+            <select class="brandsel" onchange="setPickerBrand(this.value)">${brandOpts}</select>
+            <label class="ctxtoggle"><input type="checkbox" ${pickerCtx ? 'checked' : ''} onchange="togglePickerCtx()"> Match current occasion &amp; weather</label>
+          </div>
+        </div>
+        <div class="mgrid">${grid}</div>
+        ${foot}
+      </div>
+    </div>`;
+}
+
+function saveState(){
+  const state = { occ: $('#occasion').value, weather: $('#weather').value, type: outfitType, mode: appMode, sel: {} };
+  for(const k of Object.keys(selection)){ if(selection[k]) state.sel[k] = selection[k].id; }
+  try{ localStorage.setItem('outfitState', JSON.stringify(state)); }catch(e){}
+}
+
+function loadState(){
+  try{ return JSON.parse(localStorage.getItem('outfitState')); }catch(e){ return null; }
+}
+
+function orderedSelection(){
+  const out = [];
+  for(const s of MAIN_ORDER){ if(selection[s]) out.push({ key:s, label:s, item:selection[s], optional: OPTIONAL_MAIN.includes(s), acc:false }); }
+  for(const cat of ACC_CATS){ if(selection[cat]) out.push({ key:cat, label: accLabel(cat), item:selection[cat], optional:true, acc:true }); }
+  return out;
+}
+
+function currentIds(){ return orderedSelection().map(x => x.item.id); }
+
+function render(){
+  const stage = $('#stage');
+  const picks = orderedSelection();
+  saveState();
+
+  if(picks.length === 0){
+    stage.innerHTML = `<div class="look" style="margin-top:22px"><div class="empty">No outfit possible for this Occasion + Weather.<br>Try a different combination (e.g. Occasion: Casual, Weather: All year).</div></div>`;
+    return;
+  }
+
+  const occ = $('#occasion').value, weather = $('#weather').value;
+  const ids = currentIds();
+  const idsArg = ids.join(',');
+  const imgName = 'outfit-' + ids.join('-') + '.png';
+  const cmd = `.\\tools\\generate-outfit-image.ps1 -Items ${idsArg} -Occasion "${occ}" -Weather "${weather}"`;
+  curImgName = imgName; curCmd = cmd;
+
+  const piecesHtml = picks.map(({key,label,item,optional,acc}) => {
+    const changeCall = acc ? `openAccPicker('${item.category}')` : `openPicker('${key}')`;
+    const acts = `<div class="acts"><button class="favi" onclick="toggleItemFav(${item.id})" title="Favorite this item">${isItemFav(item.id) ? '&#9829;' : '&#9825;'}</button><button onclick="${changeCall}">Change</button>${optional ? `<button class="rm" onclick="removeSlot('${key}')">Remove</button>` : ''}</div>`;
+    const pr = money(item.price);
+    const shop = item.url ? `<a class="shop" href="${item.url}" target="_blank" rel="noopener">View in store &#8599;</a>` : '';
+    return `<figure class="piece">
+        <span class="tag">${label}</span>
+        <img src="${item.image}" alt="${item.brand} ${item.category}" loading="lazy">
+        ${acts}
+        <figcaption class="cap">
+          <div class="caprow"><b>${item.category}</b>${pr ? `<span class="price">${pr}</span>` : ''}</div>
+          ${item.brand}
+          ${shop}
+        </figcaption>
+      </figure>`;
+  }).join('');
+
+  const missingMain = OPTIONAL_MAIN.filter(s => !selection[s] && (pools[s]||[]).length);
+  const missingAcc = ACC_CATS.filter(c => !selection[c]);
+  const chips = missingMain.map(s => `<button class="chip" onclick="openPicker('${s}')">&#43; Add ${s.toLowerCase()}</button>`)
+    .concat(missingAcc.map(c => `<button class="chip" onclick="openAccPicker('${c}')">&#43; Add ${accLabel(c).toLowerCase()}</button>`));
+  const addsHtml = chips.length ? '<div class="adds">' + chips.join('') + '</div>' : '';
+
+  const listHtml = picks.map(({label,item}) => {
+    const pr = money(item.price);
+    const shop = item.url ? `<a class="lshop" href="${item.url}" target="_blank" rel="noopener">View in store &#8599;</a>` : '';
+    const fav = `<button class="lfav ${isItemFav(item.id) ? 'on' : ''}" onclick="toggleItemFav(${item.id})" title="Favorite this item">${isItemFav(item.id) ? '&#9829;' : '&#9825;'}</button>`;
+    return `<li><img class="thumb" src="${item.image}" alt=""><div class="who"><span>${label}</span>${item.brand} &middot; ${item.category}${pr ? ` &middot; <b>${pr}</b>` : ''}${shop}</div>${fav}</li>`;
+  }).join('');
+
+  const pricedPicks = picks.filter(p => p.item.price != null && p.item.price !== '');
+  const totalNum = pricedPicks.reduce((s, p) => s + (parseFloat(p.item.price) || 0), 0);
+  const notPriced = picks.length - pricedPicks.length;
+  const totalStr = totalNum % 1 === 0 ? totalNum : totalNum.toFixed(2);
+  const totalHtml = `<div class="total"><span>Outfit total</span><b>$${totalStr}${notPriced ? `<small>+${notPriced} not priced</small>` : ''}</b></div>`;
+
+  const isFav = currentFavIndex() >= 0;
+  const favBtn = `<button class="btn ${isFav ? 'favon' : 'fav'}" style="width:100%;margin-top:2px" onclick="toggleFavorite()">${isFav ? '&#9829; In favorites' : '&#9825; Save to favorites'}</button>`;
+
+  stage.innerHTML = `
+    <div class="board">
+      <section class="look">
+        <h2>The look &middot; ${occ} / ${weather}</h2>
+        <div class="pieces">${piecesHtml}</div>
+        ${addsHtml}
+      </section>
+      <aside class="panel">
+        <h2>Outfit summary</h2>
+        <ul class="list">${listHtml}</ul>
+        ${totalHtml}
+        ${favBtn}
+
+        <div class="ai">
+          <h2>AI styled photo <span class="pro">Pro</span></h2>
+          <div class="frame">
+            <img id="aiImg" src="generated/${imgName}" alt="AI styled look"
+                 onload="this.style.display='block';document.getElementById('aiPh').style.display='none'"
+                 onerror="this.style.display='none'">
+            <div class="ph" id="aiPh">Make your selection above, then when you're ready click <b>&#10024; Generate AI image</b> below.<br>It copies the command &mdash; run it in the terminal, then click again to show the photo.</div>
+          </div>
+          <button id="genAi" class="btn primary" style="width:100%;margin-top:12px" onclick="genAi()">&#10024; Generate AI image</button>
+          <div class="cmd" id="cmd">${cmd}<button class="copy" onclick="copyCmd()">Copy</button></div>
+          <p class="aihint">This look stays fixed until you change a selection, so the photo always matches. Set your key once per terminal with <code>$env:OPENAI_API_KEY = "sk-..."</code>, paste the copied command, and it saves to <code>generated/${imgName}</code>. Each photo costs a few cents.</p>
+        </div>
+      </aside>
+    </div>`;
+}
+
+function copyCmd(){
+  const text = $('#cmd').childNodes[0].nodeValue;
+  navigator.clipboard.writeText(text).then(()=>{
+    const b = document.querySelector('#cmd .copy'); const old = b.textContent;
+    b.textContent = 'Copied!'; setTimeout(()=>b.textContent=old, 1400);
+  });
+}
+
+function reloadAi(name){
+  const img = $('#aiImg');
+  img.onload = function(){ this.style.display='block'; $('#aiPh').style.display='none'; };
+  img.src = 'generated/' + name + '?t=' + Date.now();
+}
+
+function genAi(){
+  if(!curImgName) return;
+  if(curCmd){ navigator.clipboard.writeText(curCmd).catch(()=>{}); }
+  const b = $('#genAi'); const old = b.innerHTML;
+  b.innerHTML = '&#128203; Command copied - run it in the terminal';
+  setTimeout(()=>{ b.innerHTML = old; }, 2600);
+  reloadAi(curImgName);
+}
+
+const HEADINGS = {
+  presets:  { t:'Style Studio', s:'Pick occasion, weather &amp; outfit type. Change any piece from the full catalog, add or remove shoes/bag/belt, then generate the AI photo.' },
+  build:    { t:'Style Studio', s:'Pick occasion, weather &amp; outfit type. Change any piece from the full catalog, add or remove shoes/bag/belt, then generate the AI photo.' },
+  favorites:{ t:'Style Studio', s:'Your saved items and looks, ready to restyle any time.' },
+  closet:   { t:'My Closet', s:'Your curated essentials plus any pieces you\u2019ve added \u2014 the wardrobe every outfit is built from.' },
+  profile:  { t:'Your Profile', s:'Manage your account, plan and preferences.' }
+};
+let lastBuilderMode = 'presets';
+
+function setSidebarActive(m){
+  const map = { profile:'profile', closet:'closet', presets:'build', build:'build', favorites:'build' };
+  const active = map[m];
+  document.querySelectorAll('.sidebar [data-side]').forEach(el => el.classList.toggle('active', el.dataset.side === active));
+}
+
+function openBuilder(){ setMode(lastBuilderMode || 'presets'); }
+
+function toggleSidebar(){
+  const shell = $('#shell');
+  if(window.matchMedia('(max-width: 860px)').matches){
+    shell.classList.toggle('menu-open');
+    return;
+  }
+  const collapsed = shell.classList.toggle('collapsed');
+  try{ localStorage.setItem('sidebarCollapsed', collapsed ? '1' : '0'); }catch(e){}
+}
+
+function setMode(m){
+  appMode = m;
+  document.body.dataset.mode = m;
+  syncMenuSelect($('#occasion')); syncMenuSelect($('#weather'));
+  $('#shell').classList.remove('menu-open');
+  if(m === 'presets' || m === 'build' || m === 'favorites') lastBuilderMode = m;
+  document.querySelectorAll('#modeNav button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+  setSidebarActive(m);
+  const inBuilder = (m === 'presets' || m === 'build' || m === 'favorites');
+  $('#modeNav').style.display = inBuilder ? '' : 'none';
+  const h = HEADINGS[m]; if(h){ $('#pageTitle').textContent = h.t; $('#pageSub').innerHTML = h.s; }
+  $('#presetView').style.display = m === 'presets' ? '' : 'none';
+  $('#buildView').style.display = m === 'build' ? '' : 'none';
+  $('#favView').style.display = m === 'favorites' ? '' : 'none';
+  $('#closetView').style.display = m === 'closet' ? '' : 'none';
+  $('#profileView').style.display = m === 'profile' ? '' : 'none';
+  if(m === 'presets'){ renderPresets(); }
+  else if(m === 'favorites'){ renderFavorites(); }
+  else if(m === 'closet'){ renderCloset(); }
+  else if(m === 'profile'){ /* static mockup */ }
+  else if(Object.keys(selection).length === 0){ buildOutfit(); }
+  saveState();
+}
+
+function renderPresets(){
+  const grid = $('#presetGrid');
+  if(!PRESETS.length){ grid.innerHTML = '<p class="pintro">No starter looks yet.</p>'; return; }
+  grid.innerHTML = PRESETS.map((p, idx) => {
+    const items = (p.items || []).map(id => BYID[id]).filter(Boolean);
+    const thumbs = items.slice(0, 4).map(it => `<img src="${it.image}" alt="">`).join('');
+    const total = items.reduce((s, it) => s + (parseFloat(it.price) || 0), 0);
+    const totalStr = total % 1 === 0 ? total : total.toFixed(2);
+    return `<article class="pcard" onclick="usePreset(${idx})">
+      <div class="pcollage">${thumbs}</div>
+      <div class="pmeta">
+        <h3>${p.name}</h3>
+        <p>${p.vibe || ''}</p>
+        <div class="prow"><span class="pchip">${p.occasion} &middot; ${p.weather}</span><b>$${totalStr}</b></div>
+        <button class="btn primary pbtn">Use this look &#8594;</button>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function usePreset(idx){
+  const p = PRESETS[idx]; if(!p) return;
+  $('#occasion').value = p.occasion || 'Casual';
+  $('#weather').value = p.weather || 'All year';
+  outfitType = p.type || 'separates';
+  document.querySelectorAll('#typeSeg button').forEach(b => b.classList.toggle('active', b.dataset.type === outfitType));
+  computePools();
+  selection = {};
+  for(const id of (p.items || [])){ const it = BYID[id]; if(it) selection[keyForItem(it)] = it; }
+  setMode('build');
+  render();
+}
+
+function saveFavorites(){ try{ localStorage.setItem('outfitFavorites', JSON.stringify(FAVORITES)); }catch(e){} }
+function loadFavorites(){
+  try{
+    const f = JSON.parse(localStorage.getItem('outfitFavorites'));
+    if(!Array.isArray(f)) return [];
+    return f.map((look, index) => ({
+      occ: look.occ || 'Casual',
+      weather: look.weather || 'All year',
+      type: look.type || 'separates',
+      items: Array.isArray(look.items) ? look.items : [],
+      image: look.image || '',
+      createdAt: look.createdAt || Date.now() + index
+    }));
+  }catch(e){ return []; }
+}
+function saveFavItems(){ try{ localStorage.setItem('itemFavorites', JSON.stringify(FAV_ITEMS)); }catch(e){} }
+function loadFavItems(){ try{ const f = JSON.parse(localStorage.getItem('itemFavorites')); return Array.isArray(f) ? f : []; }catch(e){ return []; } }
+function isItemFav(id){ return FAV_ITEMS.includes(id); }
+function toggleItemFav(id){
+  const i = FAV_ITEMS.indexOf(id);
+  if(i >= 0){ FAV_ITEMS.splice(i, 1); } else { FAV_ITEMS.push(id); }
+  saveFavItems();
+  if(pickerSlots) renderModal();
+  if(appMode === 'favorites') renderFavorites(); else render();
+}
+function setFavTab(t){ favTab = t; renderFavorites(); }
+function addFavItem(id){
+  const it = BYID[id]; if(!it) return;
+  if(it.slot === 'Dress'){ outfitType = 'dress'; delete selection['Top']; delete selection['Bottom']; }
+  else if(it.slot === 'Top' || it.slot === 'Bottom'){ outfitType = 'separates'; delete selection['Dress']; }
+  document.querySelectorAll('#typeSeg button').forEach(b => b.classList.toggle('active', b.dataset.type === outfitType));
+  computePools();
+  selection[keyForItem(it)] = it;
+  setMode('build');
+  render();
+}
+function outfitKey(ids){ return ids.slice().sort((a, b) => a - b).join('-'); }
+function currentFavIndex(){ const k = outfitKey(currentIds()); return FAVORITES.findIndex(f => outfitKey(f.items || []) === k); }
+function currentFavoriteImage(){ return curImgName ? 'generated/' + curImgName : ''; }
+
+function toggleFavorite(){
+  if(currentIds().length === 0) return;
+  const idx = currentFavIndex();
+  const nextLook = {
+    occ: $('#occasion').value,
+    weather: $('#weather').value,
+    type: outfitType,
+    items: currentIds(),
+    image: currentFavoriteImage(),
+    createdAt: Date.now()
+  };
+  if(idx >= 0){ FAVORITES.splice(idx, 1); }
+  else { FAVORITES.push(nextLook); }
+  saveFavorites();
+  render();
+}
+
+function renderFavorites(){
+  document.querySelectorAll('.favtabs button').forEach(b => b.classList.toggle('active', b.dataset.favtab === favTab));
+  const grid = $('#favGrid');
+
+  if(favTab === 'items'){
+    const items = FAV_ITEMS.map(id => BYID[id]).filter(Boolean);
+    if(!items.length){
+      grid.innerHTML = '<p class="pintro">No saved items yet. Tap the &#9825; on any item (in a look or in the catalog) to save it here.</p>';
+      return;
+    }
+
+    const groups = {};
+    for(const it of items){
+      const brand = (it.brand || 'Unbranded').trim() || 'Unbranded';
+      (groups[brand] = groups[brand] || []).push(it);
+    }
+    const brandKeys = Object.keys(groups).sort((a, b) => a.localeCompare(b));
+
+    grid.innerHTML = brandKeys.map(brand => {
+      const group = groups[brand];
+      return `<div class="brand-group">
+        <div class="brand-header">${brand}</div>
+        <div class="brand-row">${group.map(it => {
+          const pr = money(it.price);
+          const shop = it.url ? `<a class="lshop" href="${it.url}" target="_blank" rel="noopener">View in store &#8599;</a>` : '';
+          return `<article class="fcard">
+            <button class="fcardfav" onclick="toggleItemFav(${it.id})" title="Remove from favorites">&#9829;</button>
+            <img src="${it.image}" alt="" onclick="addFavItem(${it.id})">
+            <div class="fcardmeta" onclick="addFavItem(${it.id})"><b>${it.category}</b>${it.brand}${pr ? ` &middot; <b>${pr}</b>` : ''}${shop}</div>
+          </article>`;
+        }).join('')}</div>
+      </div>`;
+    }).join('');
+    return;
+  }
+
+  if(!FAVORITES.length){
+    grid.innerHTML = '<p class="pintro">No saved looks yet. Build or pick a look, then tap &#9829; Save to favorites.</p>';
+    return;
+  }
+
+  grid.innerHTML = FAVORITES.map((f, idx) => {
+    const items = (f.items || []).map(id => BYID[id]).filter(Boolean);
+    const thumbs = items.slice(0, 4).map(it => `<img src="${it.image}" alt="">`).join('');
+    const total = items.reduce((s, it) => s + (parseFloat(it.price) || 0), 0);
+    const totalStr = total % 1 === 0 ? total : total.toFixed(2);
+    const hero = items.find(it => it.slot === 'Dress') || items.find(it => it.slot === 'Top') || items[0];
+    const title = hero ? `${hero.brand} ${hero.category}` : 'Saved look';
+    const more = items.length > 1 ? `+ ${items.length - 1} more piece${items.length - 1 === 1 ? '' : 's'}` : 'One piece';
+    const preview = f.image ? `<div class="pcollage" onclick="useFavorite(${idx})"><img src="${f.image}" alt="Saved look" style="width:100%;height:120px;object-fit:cover;padding:0"></div>` : `<div class="pcollage" onclick="useFavorite(${idx})">${thumbs}</div>`;
+
+    return `<article class="pcard">
+      ${preview}
+      <div class="pmeta">
+        <h3>${title}</h3>
+        <p>${more}</p>
+        <div class="prow"><span class="pchip">${f.occ} &middot; ${f.weather}</span><b>$${totalStr}</b></div>
+        <div class="favbtns">
+          <button class="btn primary pbtn" onclick="useFavorite(${idx})">Use this look &#8594;</button>
+          <button class="btn favrm" onclick="removeFavorite(${idx})" title="Remove from favorites">&#10005;</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function useFavorite(idx){
+  const f = FAVORITES[idx]; if(!f) return;
+  $('#occasion').value = f.occ || 'Casual';
+  $('#weather').value = f.weather || 'All year';
+  outfitType = f.type || 'separates';
+  document.querySelectorAll('#typeSeg button').forEach(b => b.classList.toggle('active', b.dataset.type === outfitType));
+  computePools();
+  selection = {};
+  for(const id of (f.items || [])){ const it = BYID[id]; if(it) selection[keyForItem(it)] = it; }
+  setMode('build');
+  render();
+}
+
+function removeFavorite(idx){ FAVORITES.splice(idx, 1); saveFavorites(); renderFavorites(); }
+
+function fillSelect(sel, values){
+  sel.innerHTML = values.map(v => `<option value="${v}">${v}</option>`).join('');
+}
+
+function syncMenuSelect(sel){
+  if(sel && sel._menuSync) sel._menuSync();
+}
+
+function enhanceMenuSelect(sel){
+  if(!sel || sel.dataset.menuReady) return;
+  sel.dataset.menuReady = '1';
+  const wrap = document.createElement('div');
+  wrap.className = 'menuSelect';
+  sel.parentNode.insertBefore(wrap, sel);
+  wrap.appendChild(sel);
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'menuButton';
+  button.setAttribute('aria-haspopup', 'listbox');
+  const list = document.createElement('div');
+  list.className = 'menuList';
+  list.setAttribute('role', 'listbox');
+  wrap.insertBefore(button, sel);
+  wrap.insertBefore(list, sel);
+
+  const sync = () => {
+    button.firstChild ? button.firstChild.nodeValue = sel.options[sel.selectedIndex]?.textContent || '' : button.textContent = sel.options[sel.selectedIndex]?.textContent || '';
+    list.querySelectorAll('.menuOption').forEach(option => option.classList.toggle('active', option.dataset.value === sel.value));
+  };
+  sel._menuSync = sync;
+  Array.from(sel.options).forEach(option => {
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.className = 'menuOption';
+    item.dataset.value = option.value;
+    item.textContent = option.textContent;
+    item.setAttribute('role', 'option');
+    item.onclick = event => {
+      event.stopPropagation();
+      sel.value = option.value;
+      sel.dispatchEvent(new Event('change', { bubbles:true }));
+      wrap.classList.remove('open');
+      sync();
+    };
+    list.appendChild(item);
+  });
+  button.onclick = event => {
+    event.stopPropagation();
+    document.querySelectorAll('.menuSelect.open').forEach(other => { if(other !== wrap) other.classList.remove('open'); });
+    wrap.classList.toggle('open');
+    sync();
+  };
+  document.addEventListener('click', () => wrap.classList.remove('open'));
+  sync();
+}
+
+// --- My Closet (add-your-own) ---
+function saveMyItems(){ try{ localStorage.setItem('myClosetItems', JSON.stringify(MY_ITEMS)); }catch(e){} }
+function loadMyItems(){ try{ const m = JSON.parse(localStorage.getItem('myClosetItems')); return Array.isArray(m) ? m : []; }catch(e){ return []; } }
+
+function initMyClosetForm(weathers){
+  fillSelect($('#myCategory'), CATEGORIES);
+  fillSelect($('#myWeather'), weathers);
+  myOccSel = [];
+  $('#myOcc').innerHTML = OCCASIONS.map(o =>
+    `<button type="button" class="occchip" data-occ="${o}" onclick="toggleMyOcc(this)">${o}</button>`
+  ).join('');
+}
+
+function toggleMyOcc(btn){
+  const o = btn.dataset.occ;
+  const i = myOccSel.indexOf(o);
+  if(i >= 0){ myOccSel.splice(i, 1); btn.classList.remove('on'); }
+  else { myOccSel.push(o); btn.classList.add('on'); }
+}
+
+function addMyItem(){
+  const url = $('#myUrl').value.trim();
+  const category = $('#myCategory').value;
+  if(!category){ alert('Pick a category first.'); return; }
+  const item = {
+    id: 'my-' + Date.now(),
+    url,
+    category,
+    slot: SLOT_OF_CATEGORY[category] || 'Top',
+    weather: $('#myWeather').value || 'All year',
+    occasions: myOccSel.slice(),
+    brand: $('#myBrand').value.trim(),
+    price: $('#myPrice').value.trim(),
+    image: ''
+  };
+  MY_ITEMS.unshift(item);
+  saveMyItems();
+  $('#myUrl').value = ''; $('#myBrand').value = ''; $('#myPrice').value = '';
+  myOccSel = [];
+  document.querySelectorAll('#myOcc button').forEach(b => b.classList.remove('on'));
+  renderMyGrid();
+}
+
+function removeMyItem(id){
+  const i = MY_ITEMS.findIndex(m => m.id === id);
+  if(i >= 0){ MY_ITEMS.splice(i, 1); saveMyItems(); renderMyGrid(); }
+}
+
+function renderMyGrid(){
+  const grid = $('#myGrid');
+  if(!MY_ITEMS.length){
+    grid.innerHTML = '<div class="myempty">No pieces yet &mdash; paste a link above to add your first one.</div>';
+    return;
+  }
+  grid.innerHTML = MY_ITEMS.map(it => {
+    const occ = (it.occasions || []).join(', ') || '&mdash;';
+    const title = it.brand || 'Untitled piece';
+    const price = money(it.price);
+    const link = it.url ? ` &middot; <a href="${it.url}" target="_blank" rel="noopener">link &#8599;</a>` : '';
+    const thumb = it.image
+      ? `<img src="${it.image}" alt="">`
+      : `<div style="height:210px;display:flex;align-items:center;justify-content:center;background:#fff;color:#c9bdae"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div>`;
+    return `<article class="mycard">
+      <button class="mrm" title="Remove" onclick="removeMyItem('${it.id}')">&times;</button>
+      ${thumb}
+      <div class="mcap">
+        <b>${title}</b>
+        ${it.category} &middot; ${it.slot} &middot; ${it.weather}<br>
+        ${occ}${price ? ' &middot; ' + price : ''}${link}
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function renderCloset(){
+  const ess = $('#essCount'); if(ess) ess.textContent = CATALOG.length;
+  const prev = $('#essPreview');
+  if(prev){
+    const picks = [];
+    for(const s of ['Top','Bottom','Dress','Layer','Shoes','Bag','Accessory']){
+      const arr = bySlot[s] || [];
+      if(arr[0]) picks.push(arr[0]);
+      if(arr[1]) picks.push(arr[1]);
+    }
+    prev.innerHTML = picks.slice(0, 8).map(it => `<img src="${it.image}" alt="">`).join('');
+  }
+  renderMyGrid();
+}
+
+
+async function init(){
+  try{
+    const [cat, tax, pre] = await Promise.all([
+      fetch('catalog.json').then(r=>r.json()),
+      fetch('taxonomy.json?v=' + Date.now()).then(r=>r.json()).catch(()=>null),
+      fetch('presets.json').then(r=>r.json()).catch(()=>[])
+    ]);
+    PRESETS = Array.isArray(pre) ? pre : [];
+    FAVORITES = loadFavorites();
+    FAV_ITEMS = loadFavItems();
+    CATALOG = cat;
+    bySlot = {}; BYID = {}; ACC_CATS = [];
+    for(const it of CATALOG){ (bySlot[it.slot] ||= []).push(it); BYID[it.id] = it; }
+    for(const s of ACCESSORY_SLOTS){ for(const it of (bySlot[s]||[])){ if(!ACC_CATS.includes(it.category)) ACC_CATS.push(it.category); } }
+
+    const rawOccasions = (tax && tax.occasions) || ['Work','Casual','Going out','Lounge','Resort'];
+    const occasions = rawOccasions.map(o => o === 'Beach' ? 'Resort' : o).filter((o, i, all) => all.indexOf(o) === i);
+    if(!occasions.includes('Lounge')) occasions.push('Lounge');
+    if(!occasions.includes('Resort')) occasions.push('Resort');
+    const weathers = (tax && tax.weathers) || ['All year','Cold','Hot'];
+    OCCASIONS = occasions;
+    CATEGORIES = (tax && tax.categories) || Object.keys(SLOT_OF_CATEGORY);
+    MY_ITEMS = loadMyItems();
+    fillSelect($('#occasion'), occasions);
+    fillSelect($('#weather'), weathers);
+    enhanceMenuSelect($('#occasion'));
+    enhanceMenuSelect($('#weather'));
+    initMyClosetForm(weathers);
+
+    $('#occasion').addEventListener('change', buildOutfit);
+    $('#weather').addEventListener('change', buildOutfit);
+    document.querySelectorAll('#typeSeg button').forEach(b => b.addEventListener('click', () => setType(b.dataset.type)));
+    document.querySelectorAll('#modeNav button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+
+    // Restore collapsed sidebar preference.
+    if(localStorage.getItem('sidebarCollapsed') === '1'){
+      $('#shell').classList.add('collapsed');
+    }
+
+    // Restore the last outfit so reloads don't re-shuffle (keeps AI photo matched).
+    const saved = loadState();
+    if(saved && saved.sel && Object.keys(saved.sel).length){
+      $('#occasion').value = saved.occ || 'Work';
+      $('#weather').value = saved.weather || 'All year';
+      outfitType = saved.type || 'separates';
+      document.querySelectorAll('#typeSeg button').forEach(b => b.classList.toggle('active', b.dataset.type === outfitType));
+      computePools();
+      selection = {};
+      for(const id of Object.values(saved.sel || {})){ const it = BYID[id]; if(it) selection[keyForItem(it)] = it; }
+      if(Object.keys(selection).length) render(); else buildOutfit();
+    } else {
+      $('#occasion').value = 'Work';
+      $('#weather').value = 'All year';
+    }
+    setMode('build');
+  }catch(err){
+    $('#stage').innerHTML = `<div class="look" style="margin-top:22px"><div class="err">
+      This prototype is designed to run as a static site. To share it with friends, publish the folder to a web host such as Netlify or Vercel and open the public URL.<br><br>
+      If you are testing locally, use a simple server instead of opening the file directly. Example: <code>python -m http.server 8000</code> then visit <code>http://localhost:8000/outfit-app.html</code>.<br><br>
+      <small>${(err && err.message) || err}</small>
+    </div></div>`;
+  }
+}
+init();
+</script>
+</body>
+</html>
