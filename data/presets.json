@@ -1,50 +1,42 @@
 [
   {
-    "name": "Office Polished",
-    "vibe": "Clean tailoring that always reads put-together.",
-    "occasion": "Work",
-    "weather": "All year",
-    "type": "separates",
-    "items": [23, 50, 88, 98]
-  },
-  {
-    "name": "Everyday Casual",
-    "vibe": "The easy jeans-and-a-good-top formula.",
+    "name": "The Errand Edit",
+    "vibe": "A light, easy warm-weather look for getting things done.",
     "occasion": "Casual",
     "weather": "All year",
     "type": "separates",
-    "items": [2, 62, 83, 98]
+    "items": [78, 69, 90, 165, 22]
   },
   {
-    "name": "Night Out",
-    "vibe": "A going-out top with heels and a statement bag.",
+    "name": "Casual Workday",
+    "vibe": "Look cool all day at the office, then head straight to dinner with friends.",
+    "occasion": "Work",
+    "weather": "All year",
+    "type": "separates",
+    "items": [18, 2, 61, 159, 162, 22]
+  },
+  {
+    "name": "Date Night",
+    "vibe": "A polished going-out look for dinner and a night together.",
     "occasion": "Going out",
     "weather": "All year",
     "type": "separates",
-    "items": [11, 58, 79, 96]
+    "items": [12, 58, 91, 96]
   },
   {
-    "name": "Easy Dress",
-    "vibe": "One-and-done: a dress with booties and a bag.",
+    "name": "Weekend Wind-Down",
+    "vibe": "A relaxed, put-together outfit for hanging out over the weekend.",
     "occasion": "Casual",
     "weather": "All year",
+    "type": "separates",
+    "items": [33, 68, 79, 98]
+  },
+  {
+    "name": "Summer Strolling",
+    "vibe": "A breezy dress and easy accessories for wandering around on a warm day.",
+    "occasion": "Casual",
+    "weather": "Hot",
     "type": "dress",
-    "items": [128, 159, 98]
-  },
-  {
-    "name": "Smart Layers",
-    "vibe": "A blazer over a shirt for cooler days at work.",
-    "occasion": "Work",
-    "weather": "Cold",
-    "type": "separates",
-    "items": [15, 100, 51, 88, 98]
-  },
-  {
-    "name": "Skirt & Knit",
-    "vibe": "A soft knit tucked into a skirt, finished with a belt.",
-    "occasion": "Work",
-    "weather": "All year",
-    "type": "separates",
-    "items": [26, 47, 160, 20, 98]
+    "items": [127, 141, 163]
   }
 ]

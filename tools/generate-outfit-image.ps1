@@ -93,7 +93,11 @@ $imagesDir = Join-Path $dataDir 'images'
 $refs = @()
 if (-not $NoReference) {
     foreach ($it in $chosen) {
-        $f = Get-ChildItem (Join-Path $imagesDir "$($it.id).*") -ErrorAction SilentlyContinue | Select-Object -First 1
+        $catalogImage = [string]$it.image
+        $f = if (-not [string]::IsNullOrWhiteSpace($catalogImage)) {
+            $path = Join-Path $dataDir $catalogImage
+            if (Test-Path $path) { Get-Item $path }
+        }
         if ($f) {
             $mime = switch ($f.Extension.ToLower()) {
                 '.jpg' { 'image/jpeg' }
@@ -105,7 +109,8 @@ if (-not $NoReference) {
             if ($mime) {
                 $refs += [pscustomobject]@{
                     Path = $f.FullName; Name = $f.Name; Mime = $mime
-                    Slot = [string]$it.slot; Noun = (Get-ItemNoun $it); Brand = [string]$it.brand
+                    ItemId = [int]$it.id; Slot = [string]$it.slot
+                    Category = [string]$it.category; Noun = (Get-ItemNoun $it); Brand = [string]$it.brand
                 }
             }
             else { Write-Warning "Skipping unsupported reference image type for #$($it.id): $($f.Name)" }
@@ -113,6 +118,19 @@ if (-not $NoReference) {
         else { Write-Warning "No product image found for #$($it.id) - it won't be used as a reference." }
     }
 }
+
+# Put the outfit's main silhouette reference first; outerwear photos can show
+# unrelated base layers that would otherwise dominate the generated outfit.
+$refs = @($refs | Sort-Object @{ Expression = {
+    switch ($_.Slot) {
+        'Bottom' { 0 }
+        'Dress' { 0 }
+        'Top' { 1 }
+        'Layer' { 2 }
+        'Shoes' { 3 }
+        default { 4 }
+    }
+} })
 
 # --- Describe each piece for the prompt (correct article + slot role) ---
 $descParts = @()
@@ -129,13 +147,13 @@ if (-not $NoReference -and $refs.Count -gt 0) {
     $refList = @()
     for ($i = 0; $i -lt $refs.Count; $i++) {
         $r = $refs[$i]
-        $refList += "image $($i + 1) is the $($r.Brand) $($r.Noun)"
+        $refList += "image $($i + 1) is catalog item #$($r.ItemId), the $($r.Brand) $($r.Category) ($($r.Slot); $($r.Noun))"
     }
     $refMap = $refList -join '; '
-    $fidelityClause = "`nYou are given $($refs.Count) reference product images. In order, $refMap. Treat every reference image as the absolute ground truth for that item's color, shade, pattern, fabric, texture, hardware, cut, length, and proportions. Reproduce each item exactly as shown. Do NOT recolor, restyle, embellish, simplify, upgrade, shorten, lengthen, resize, or swap any item, and do NOT invent or add anything that is not shown in a reference image."
+    $fidelityClause = "`nYou are given $($refs.Count) reference product images. In order, $refMap. Each numbered image belongs only to the catalog item identified beside it; do not transfer details between items. Treat each reference as the ground truth for its item's exact color, shade, pattern, fabric, texture, hardware, cut, length, and proportions. Never infer a typical color from the brand or category. Reproduce each item as shown; do not recolor, restyle, embellish, simplify, upgrade, shorten, lengthen, resize, or swap any item, and do not invent or add anything that is not shown in a reference image."
 
     $accNotes = @()
-    if ($chosen | Where-Object { $_.category -eq 'Jeans' }) { $accNotes += "The jeans must match their reference image exactly: the same denim wash and color depth, the same fading and whiskering pattern, the same rise, and the same leg cut and full length - do NOT make them skinnier, wider, cropped, distressed, or a lighter or darker wash than shown." }
+    if ($chosen | Where-Object { $_.category -eq 'Jeans' }) { $accNotes += "The jeans must match their own reference image exactly: preserve its exact denim color and wash, rise, leg shape, seams, pockets, and hem length. Keep cropped jeans cropped and full-length jeans full length exactly as shown. Do not change the shade, leg width, rise, length, fading, or distressing." }
     if ($chosen | Where-Object { $_.category -eq 'Bags' }) { $accNotes += "The handbag must be clearly visible (held in the hand or worn on the shoulder) and must match its reference image exactly in color, shape, size, silhouette, and hardware; keep it in sharp focus and do not shrink, restyle, or simplify it." }
     if ($chosen | Where-Object { $_.category -eq 'Belts' }) { $accNotes += "The belt must be worn at the waist and match its reference image exactly in color, width, and buckle style." }
     if ($accNotes.Count) { $accClause = "`n" + ($accNotes -join ' ') }

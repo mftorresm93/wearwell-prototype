@@ -361,6 +361,11 @@
   .mycard .mcap b{display:block; font-size:13px; color:var(--ink)}
   .mycard .mrm{position:absolute; top:8px; right:8px; z-index:2; border:1px solid var(--line); background:rgba(255,255,255,.94); border-radius:8px; width:30px; height:30px; font-size:15px; cursor:pointer; color:#b23b3b; line-height:1}
   .myempty{grid-column:1/-1; padding:34px; text-align:center; color:var(--muted); font-size:14px; border:1px dashed var(--line); border-radius:14px; background:#faf8f6}
+
+  .lightbox{position:fixed; inset:0; background:rgba(20,17,14,.88); display:flex; align-items:center; justify-content:center; z-index:1000; padding:28px; opacity:0; pointer-events:none; transition:opacity .15s}
+  .lightbox.open{opacity:1; pointer-events:auto}
+  .lightbox img{max-width:92vw; max-height:92vh; object-fit:contain; border-radius:10px; background:#fff; box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .lightboxClose{position:absolute; top:18px; right:22px; width:40px; height:40px; border-radius:50%; border:none; background:rgba(255,255,255,.92); font-size:22px; line-height:1; cursor:pointer; color:#1d1b19}
 </style>
 </head>
 <body>
@@ -549,6 +554,10 @@
   </div>
 </div>
 <div id="modalHost"></div>
+<div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightboxClose" onclick="closeLightbox()" title="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
 
 <script>
 const SLOT_ORDER = ['Layer','Top','Dress','Bottom','Shoes','Bag','Accessory'];
@@ -682,7 +691,7 @@ function renderModal(){
   const brandOpts = brands.map(b => `<option value="${b}" ${b === pickerBrand ? 'selected' : ''}>${b === 'All' ? 'All brands' : b}</option>`).join('');
 
   const grid = pageItems.length
-    ? pageItems.map(i => `<div class="gitem ${isSel(i) ? 'sel' : ''}" onclick="pickItem(${i.id})"><button class="gfav ${isItemFav(i.id) ? 'on' : ''}" onclick="event.stopPropagation();toggleItemFav(${i.id})" title="Favorite">${isItemFav(i.id) ? '&#9829;' : '&#9825;'}</button><img src="${i.image}" alt="" loading="lazy"><div class="gcap"><b>${i.category}</b>${i.brand}${money(i.price) ? ` &middot; <span class="gprice">${money(i.price)}</span>` : ''}${i.url ? `<a class="gshop" href="${i.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View in store &#8599;</a>` : ''}</div></div>`).join('')
+    ? pageItems.map(i => `<div class="gitem ${isSel(i) ? 'sel' : ''}" onclick="pickItem(${i.id})"><button class="gfav ${isItemFav(i.id) ? 'on' : ''}" onclick="event.stopPropagation();toggleItemFav(${i.id})" title="Favorite">${isItemFav(i.id) ? '&#9829;' : '&#9825;'}</button>${imgZoom(i.image, `${i.brand} ${i.category}`, 'loading="lazy"')}<div class="gcap"><b>${i.category}</b>${i.brand}${money(i.price) ? ` &middot; <span class="gprice">${money(i.price)}</span>` : ''}${i.url ? `<a class="gshop" href="${i.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View in store &#8599;</a>` : ''}</div></div>`).join('')
     : `<div class="empty2">Nothing matches these filters. Try &ldquo;All&rdquo; or untick &ldquo;Match occasion &amp; weather&rdquo;.</div>`;
 
   const pageButton = p => `<button class="pnum ${p === pickerPage ? 'active' : ''}" onclick="setPickerPage(${p})">${p + 1}</button>`;
@@ -765,7 +774,7 @@ function render(){
     const shop = item.url ? `<a class="shop" href="${item.url}" target="_blank" rel="noopener">View in store &#8599;</a>` : '';
     return `<figure class="piece">
         <span class="tag">${label}</span>
-        <img src="${item.image}" alt="${item.brand} ${item.category}" loading="lazy">
+        ${imgZoom(item.image, `${item.brand} ${item.category}`, 'loading="lazy"')}
         ${acts}
         <figcaption class="cap">
           <div class="caprow"><b>${item.category}</b>${pr ? `<span class="price">${pr}</span>` : ''}</div>
@@ -825,6 +834,24 @@ function render(){
       </aside>
     </div>`;
 }
+
+function imgZoom(src, alt, extra){
+  const jsSrc = String(src || '').replace(/'/g, "\\'");
+  const jsAlt = String(alt || '').replace(/'/g, "\\'");
+  return `<img src="${src}" alt="${alt || ''}" ${extra || ''} style="cursor:zoom-in" onclick="event.stopPropagation();openLightbox('${jsSrc}','${jsAlt}')">`;
+}
+function openLightbox(src, alt){
+  if(!src) return;
+  $('#lightboxImg').src = src;
+  $('#lightboxImg').alt = alt || '';
+  $('#lightbox').classList.add('open');
+  document.addEventListener('keydown', onLightboxKey);
+}
+function closeLightbox(){
+  $('#lightbox').classList.remove('open');
+  document.removeEventListener('keydown', onLightboxKey);
+}
+function onLightboxKey(e){ if(e.key === 'Escape') closeLightbox(); }
 
 function copyCmd(){
   const text = $('#cmd').childNodes[0].nodeValue;
@@ -1017,7 +1044,7 @@ function renderFavorites(){
           const shop = it.url ? `<a class="lshop" href="${it.url}" target="_blank" rel="noopener">View in store &#8599;</a>` : '';
           return `<article class="fcard">
             <button class="fcardfav" onclick="toggleItemFav(${it.id})" title="Remove from favorites">&#9829;</button>
-            <img src="${it.image}" alt="" onclick="addFavItem(${it.id})">
+            ${imgZoom(it.image, `${it.brand} ${it.category}`)}
             <div class="fcardmeta" onclick="addFavItem(${it.id})"><b>${it.category}</b>${it.brand}${pr ? ` &middot; <b>${pr}</b>` : ''}${shop}</div>
           </article>`;
         }).join('')}</div>
@@ -1188,7 +1215,7 @@ function renderMyGrid(){
     const price = money(it.price);
     const link = it.url ? ` &middot; <a href="${it.url}" target="_blank" rel="noopener">link &#8599;</a>` : '';
     const thumb = it.image
-      ? `<img src="${it.image}" alt="">`
+      ? imgZoom(it.image, title)
       : `<div style="height:210px;display:flex;align-items:center;justify-content:center;background:#fff;color:#c9bdae"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div>`;
     return `<article class="mycard">
       <button class="mrm" title="Remove" onclick="removeMyItem('${it.id}')">&times;</button>
