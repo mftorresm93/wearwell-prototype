@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Catalog Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{ --bg:#faf8f6; --card:#fff; --ink:#1d1b19; --muted:#8a8074; --line:#e7e2db; --accent:#b08968; --accent-soft:#f0e9e2; --bad:#b23b3b; --good:#178a4c; }
+  *{box-sizing:border-box}
+  body{font-family:"Segoe UI",system-ui,Arial,sans-serif; margin:0; background:var(--bg); color:var(--ink)}
+  .wrap{max-width:1100px; margin:0 auto; padding:24px 20px 80px}
+  h1{font-size:22px; margin:0 0 6px}
+  .sub{color:var(--muted); font-size:14px; margin:0 0 20px}
+  .bar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:18px}
+  .btn{border:1px solid var(--line); background:#fff; border-radius:10px; padding:10px 16px; font-size:14px; cursor:pointer; color:var(--ink)}
+  .btn:hover{border-color:var(--accent)}
+  .btn.primary{background:var(--ink); color:#fff; border-color:var(--ink)}
+  .btn.primary:disabled{opacity:.45; cursor:not-allowed}
+  .btn.danger{color:var(--bad); border-color:var(--bad)}
+  #search{flex:1; min-width:180px; padding:10px 12px; border-radius:10px; border:1px solid var(--line); font-size:14px}
+  .status{font-size:13px; color:var(--muted)}
+  .status.dirty{color:var(--bad); font-weight:600}
+  .status.saved{color:var(--good); font-weight:600}
+  .notice{border:1px dashed var(--line); border-radius:12px; padding:16px; background:#fff; color:var(--muted); font-size:14px; line-height:1.5}
+  table{width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  th, td{padding:10px; border-bottom:1px solid var(--line); font-size:13px; vertical-align:top; text-align:left}
+  th{background:var(--accent-soft); font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#5a5044}
+  tr:last-child td{border-bottom:none}
+  input[type=text], input[type=number], select{width:100%; padding:6px 8px; border-radius:8px; border:1px solid var(--line); font-size:13px; background:#fff; color:var(--ink)}
+  input[data-field=price]{min-width:78px}
+  .occ{display:flex; flex-wrap:wrap; gap:6px; max-width:180px}
+  .occ label{display:flex; align-items:center; gap:4px; font-size:12px; white-space:nowrap}
+  .thumb{width:110px; height:110px; object-fit:contain; background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:4px; cursor:zoom-in}
+  .idcol{font-weight:700; color:var(--muted); width:40px}
+  .rm{color:var(--bad); background:#fff; border:1px solid var(--line); border-radius:8px; padding:6px 10px; font-size:12px; cursor:pointer}
+  .new-row td{background:#fbf6ef}
+  #tableHost{overflow:auto}
+  .hint{font-size:11px; color:var(--muted); margin-top:3px}
+  .lightbox{position:fixed; inset:0; background:rgba(20,17,14,.88); display:flex; align-items:center; justify-content:center; z-index:1000; padding:28px; opacity:0; pointer-events:none; transition:opacity .15s}
+  .lightbox.open{opacity:1; pointer-events:auto}
+  .lightbox img{max-width:92vw; max-height:92vh; object-fit:contain; border-radius:10px; background:#fff; box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .lightboxClose{position:absolute; top:18px; right:22px; width:40px; height:40px; border-radius:50%; border:none; background:rgba(255,255,255,.92); font-size:22px; line-height:1; cursor:pointer; color:#1d1b19}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Catalog admin</h1>
+  <p class="sub">Add new pieces and fix tags directly &mdash; changes save straight to <code>data/catalog.json</code> on this computer. This page is for you only; it is not linked from the main app.</p>
+
+  <div class="bar">
+    <button class="btn primary" id="openBtn">Open catalog.json</button>
+    <button class="btn" id="imagesBtn">Choose images folder (write)</button>
+    <button class="btn" id="addBtn" disabled>+ Add new item</button>
+    <button class="btn primary" id="saveBtn" disabled>Save changes</button>
+    <input id="search" type="text" placeholder="Search brand, category, id..." disabled>
+    <span class="status" id="status">Not opened yet</span>
+  </div>
+
+  <div id="notice" class="notice">
+    Click <b>Open catalog.json</b> and pick <code>data\catalog.json</code> from your project folder (<code>C:\Users\montem70\Desktop\Proyectico\data\catalog.json</code>) once. This needs Chrome or Edge. The page remembers this choice and reopens it automatically when the browser allows it.
+    <br><br>
+    Click <b>Connect images folder</b> and pick <code>data\images</code> once. The page remembers this choice too. Each row lets you upload or paste a picture, which is copied into <code>data/images</code> and linked to that item automatically.
+  </div>
+
+  <div id="tableHost" style="display:none">
+    <table>
+      <thead>
+        <tr>
+          <th class="idcol">ID</th>
+          <th style="width:60px">Photo</th>
+          <th style="min-width:120px">Brand</th>
+          <th style="min-width:140px">Category</th>
+          <th style="width:70px">Slot</th>
+          <th style="width:90px">Weather</th>
+          <th style="min-width:180px">Occasions</th>
+          <th style="min-width:100px">Price</th>
+          <th style="min-width:160px">Product URL</th>
+          <th style="min-width:140px">Image path</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</div>
+<div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightboxClose" onclick="closeLightbox()" title="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+const CATEGORY_SLOT = {
+  'Shirts':'Top','T-shirts':'Top','Going-out tops':'Top','Sweaters':'Top',
+  'Blazers':'Layer','Jackets':'Layer','Vests':'Top',
+  'Jeans':'Bottom','Pants':'Bottom','Skirts':'Bottom',
+  'Dresses':'Dress',
+  'Shoes':'Shoes','Sneakers':'Shoes','Booties':'Shoes','Sandals':'Shoes',
+  'Bags':'Bag','Belts':'Accessory'
+};
+const CATEGORIES = Object.keys(CATEGORY_SLOT);
+const WEATHERS = ['All year','Cold','Hot'];
+let OCCASIONS = ['Work','Casual','Going out','Lounge','Beachwear'];
+
+let fileHandle = null;
+let imagesDirHandle = null;
+let pasteImageId = null;
+let catalog = [];
+let dirty = false;
+
+const $ = s => document.querySelector(s);
+const rowsEl = $('#rows');
+const statusEl = $('#status');
+
+function openHandleDb(){
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('wearwell-catalog-admin', 1);
+    request.onupgradeneeded = () => request.result.createObjectStore('handles');
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+async function storeHandle(key, handle){
+  const db = await openHandleDb();
+  await new Promise((resolve, reject) => {
+    const tx = db.transaction('handles', 'readwrite');
+    tx.objectStore('handles').put(handle, key);
+    tx.oncomplete = resolve;
+    tx.onerror = () => reject(tx.error);
+  });
+  db.close();
+}
+async function readHandle(key){
+  const db = await openHandleDb();
+  const value = await new Promise((resolve, reject) => {
+    const request = db.transaction('handles').objectStore('handles').get(key);
+    request.onsuccess = () => resolve(request.result || null);
+    request.onerror = () => reject(request.error);
+  });
+  db.close();
+  return value;
+}
+async function permissionFor(handle, mode){
+  if(!handle) return 'denied';
+  if(!handle.queryPermission) return 'prompt';
+  return handle.queryPermission({ mode });
+}
+
+function setStatus(text, cls){
+  statusEl.textContent = text;
+  statusEl.className = 'status' + (cls ? ' ' + cls : '');
+}
+function markDirty(){
+  dirty = true;
+  $('#saveBtn').disabled = false;
+  setStatus('Unsaved changes', 'dirty');
+}
+function downloadCatalog(){
+  const blob = new Blob([JSON.stringify(catalog, null, 4)], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'catalog.updated.json';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  dirty = false;
+  $('#saveBtn').disabled = true;
+  setStatus('Downloaded catalog.updated.json. Replace data/catalog.json with it.', 'saved');
+}
+
+async function loadTaxonomyOccasions(){
+  try{
+    const tax = await fetch('taxonomy.json?v=' + Date.now()).then(r => r.json());
+    if(Array.isArray(tax.occasions) && tax.occasions.length) OCCASIONS = tax.occasions;
+  }catch(e){ /* keep defaults */ }
+}
+
+function openLightbox(src){
+  if(!src) return;
+  $('#lightboxImg').src = src;
+  $('#lightbox').classList.add('open');
+  document.addEventListener('keydown', onLightboxKey);
+}
+function closeLightbox(){
+  $('#lightbox').classList.remove('open');
+  document.removeEventListener('keydown', onLightboxKey);
+}
+function onLightboxKey(e){ if(e.key === 'Escape') closeLightbox(); }
+
+function nextId(){
+  return catalog.reduce((max, it) => Math.max(max, Number(it.id) || 0), 0) + 1;
+}
+
+function categoryOptions(selected){
+  return CATEGORIES.map(c => `<option value="${c}" ${c === selected ? 'selected' : ''}>${c}</option>`).join('');
+}
+function weatherOptions(selected){
+  return WEATHERS.map(w => `<option value="${w}" ${w === selected ? 'selected' : ''}>${w}</option>`).join('');
+}
+function occasionChecks(id, selected){
+  const sel = new Set(selected || []);
+  return OCCASIONS.map(o => `<label><input type="checkbox" data-field="occasions" data-occ="${o}" data-id="${id}" ${sel.has(o) ? 'checked' : ''}>${o}</label>`).join('');
+}
+
+function rowHtml(item, isNew){
+  const slot = CATEGORY_SLOT[item.category] || item.slot || '';
+  const img = item.image ? `<img class="thumb" data-thumb="${item.id}" src="${item.image}" alt="" onclick="openLightbox('${item.image}')" onerror="this.style.visibility='hidden'">` : `<span class="hint" data-thumb="${item.id}">no photo</span>`;
+  return `<tr data-id="${item.id}" ${isNew ? 'class="new-row"' : ''}>
+    <td class="idcol">#${item.id}</td>
+    <td>${img}<br>
+      <label class="rm" style="display:inline-block;margin-top:4px;cursor:pointer">Choose image
+        <input type="file" accept="image/*" data-upload="${item.id}" style="display:none">
+      </label>
+    </td>
+    <td><input type="text" data-field="brand" data-id="${item.id}" value="${item.brand || ''}"></td>
+    <td><select data-field="category" data-id="${item.id}">${categoryOptions(item.category)}</select></td>
+    <td>${slot}</td>
+    <td><select data-field="weather" data-id="${item.id}">${weatherOptions(item.weather)}</select></td>
+    <td><div class="occ">${occasionChecks(item.id, item.occasions)}</div></td>
+    <td><input type="number" step="0.01" data-field="price" data-id="${item.id}" value="${item.price != null ? item.price : ''}"></td>
+    <td><input type="text" data-field="url" data-id="${item.id}" value="${item.url || ''}"></td>
+    <td><input type="text" data-field="image" data-id="${item.id}" value="${item.image || ''}">
+        <div class="hint">must already exist in data/images</div></td>
+    <td><button class="rm" data-id="${item.id}">Delete</button></td>
+  </tr>`;
+}
+
+function render(filterText){
+  const q = (filterText || '').trim().toLowerCase();
+  const list = q
+    ? catalog.filter(it => String(it.id).includes(q) || (it.brand||'').toLowerCase().includes(q) || (it.category||'').toLowerCase().includes(q))
+    : catalog;
+  rowsEl.innerHTML = list.map(it => rowHtml(it, false)).join('');
+}
+
+function findItem(id){ return catalog.find(it => Number(it.id) === Number(id)); }
+
+async function saveItemImage(id, file){
+  if(!imagesDirHandle){
+    alert('Click "Connect images folder" first and pick data/images.');
+    return;
+  }
+  const permission = await permissionFor(imagesDirHandle, 'readwrite');
+  if(permission !== 'granted') throw new Error('Image-folder write access was not granted. Click Connect images folder and allow access.');
+  const mimeExt = { 'image/jpeg':'jpg', 'image/png':'png', 'image/webp':'webp', 'image/gif':'gif', 'image/avif':'avif' };
+  const ext = (file.name && file.name.includes('.') ? file.name.split('.').pop() : mimeExt[file.type]) || 'png';
+  const name = `${id}.${ext.toLowerCase()}`;
+  const imgHandle = await imagesDirHandle.getFileHandle(name, { create: true });
+  const writable = await imgHandle.createWritable();
+  await writable.write(file);
+  await writable.close();
+  const item = findItem(id);
+  if(item) item.image = `images/${name}`;
+  const row = rowsEl.querySelector(`tr[data-id="${id}"]`);
+  const cell = row?.children[1];
+  const preview = cell?.querySelector(`[data-thumb="${id}"]`);
+  if(preview){
+    const fresh = new Image();
+    fresh.className = 'thumb';
+    fresh.dataset.thumb = id;
+    fresh.src = `images/${name}?v=` + Date.now();
+    fresh.onclick = () => openLightbox(fresh.src);
+    preview.replaceWith(fresh);
+  }
+  const pathInput = row?.querySelector(`input[data-field="image"][data-id="${id}"]`);
+  if(pathInput) pathInput.value = `images/${name}`;
+  markDirty();
+}
+
+rowsEl.addEventListener('input', e => {
+  const t = e.target;
+  const id = t.dataset.id, field = t.dataset.field;
+  if(!id || !field) return;
+  const item = findItem(id);
+  if(!item) return;
+  if(field === 'category'){
+    item.category = t.value;
+    item.slot = CATEGORY_SLOT[t.value] || item.slot;
+    const slotCell = t.closest('tr').children[4];
+    slotCell.textContent = item.slot;
+  } else if(field === 'price'){
+    item.price = t.value === '' ? null : Number(t.value);
+  } else if(field === 'occasions'){
+    const occ = t.dataset.occ;
+    item.occasions = item.occasions || [];
+    if(t.checked){ if(!item.occasions.includes(occ)) item.occasions.push(occ); }
+    else{ item.occasions = item.occasions.filter(o => o !== occ); }
+  } else {
+    item[field] = t.value;
+  }
+  markDirty();
+});
+
+rowsEl.addEventListener('change', async e => {
+  if(e.target.dataset.field === 'occasions'){ markDirty(); return; }
+  if(e.target.dataset.upload){
+    const id = Number(e.target.dataset.upload);
+    const file = e.target.files && e.target.files[0];
+    if(!file) return;
+    try{
+      await saveItemImage(id, file);
+    }catch(err){
+      alert('Could not save the photo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+});
+
+rowsEl.addEventListener('click', async e => {
+  if(!e.target.classList.contains('rm') || e.target.tagName !== 'BUTTON') return;
+  const id = Number(e.target.dataset.id);
+  if(!confirm('Delete item #' + id + '? This only removes it from the catalog, not its photo file.')) return;
+  catalog = catalog.filter(it => Number(it.id) !== id);
+  markDirty();
+  render($('#search').value);
+});
+
+$('#search').addEventListener('input', e => render(e.target.value));
+
+async function loadCatalogFromHandle(){
+  const file = await fileHandle.getFile();
+  await loadCatalogData(JSON.parse(await file.text()), file.name);
+}
+async function loadCatalogData(data, label){
+  catalog = data;
+  await loadTaxonomyOccasions();
+  $('#tableHost').style.display = '';
+  $('#notice').style.display = 'none';
+  $('#addBtn').disabled = false;
+  $('#search').disabled = false;
+  render('');
+  dirty = false;
+  $('#saveBtn').disabled = true;
+  setStatus(`Loaded ${catalog.length} items from ${label}`);
+}
+
+$('#imagesBtn').addEventListener('click', async () => {
+  if(!window.showDirectoryPicker){
+    alert('Your browser does not support this. Please use Chrome or Edge.');
+    return;
+  }
+  try{
+    imagesDirHandle = await window.showDirectoryPicker({ id: 'catalog-images', mode: 'readwrite' });
+    await storeHandle('imagesDirectory', imagesDirHandle);
+    const permission = imagesDirHandle.requestPermission
+      ? await imagesDirHandle.requestPermission({ mode: 'readwrite' })
+      : await permissionFor(imagesDirHandle, 'readwrite');
+    $('#imagesBtn').textContent = permission === 'granted'
+      ? 'Images folder: ' + imagesDirHandle.name
+      : 'Choose images folder (write)';
+    setStatus(permission === 'granted'
+      ? 'Images folder connected and writable.'
+      : 'Folder selected, but write access was not granted.', permission === 'granted' ? 'saved' : 'dirty');
+  }catch(err){
+    if(err.name !== 'AbortError') alert('Could not connect the folder: ' + err.message);
+  }
+});
+
+$('#addBtn').addEventListener('click', () => {
+  const id = nextId();
+  const blank = { id, brand:'', slot:'Top', category:'Shirts', weather:'All year', occasions:[], image:'', imageSource:'manual', url:'', price:null, currency:'USD' };
+  catalog.unshift(blank);
+  render($('#search').value);
+  markDirty();
+});
+
+$('#openBtn').addEventListener('click', async () => {
+  if(!window.showOpenFilePicker){
+    alert('Your browser does not support direct file editing. Please use Chrome or Edge.');
+    return;
+  }
+  try{
+    if(fileHandle){
+      let permission = await permissionFor(fileHandle, 'readwrite');
+      if(permission !== 'granted' && fileHandle.requestPermission){
+        permission = await fileHandle.requestPermission({ mode: 'readwrite' });
+      }
+      if(permission === 'granted'){
+        try{
+          await loadCatalogFromHandle();
+          $('#openBtn').textContent = 'Catalog: ' + fileHandle.name;
+          return;
+        }catch(err){
+          fileHandle = null;
+        }
+      }
+      fileHandle = null;
+    }
+    [fileHandle] = await window.showOpenFilePicker({
+      types: [{ description: 'Catalog JSON', accept: { 'application/json': ['.json'] } }],
+      excludeAcceptAllOption: false
+    });
+    await storeHandle('catalogFile', fileHandle);
+    await loadCatalogFromHandle();
+    $('#openBtn').textContent = 'Catalog: ' + fileHandle.name;
+  }catch(err){
+    if(err.name !== 'AbortError') alert('Could not open the file: ' + err.message);
+  }
+});
+
+async function restoreSavedHandles(){
+  try{
+    [fileHandle, imagesDirHandle] = await Promise.all([
+      readHandle('catalogFile'),
+      readHandle('imagesDirectory')
+    ]);
+    if(imagesDirHandle){
+      const permission = await permissionFor(imagesDirHandle, 'readwrite');
+      $('#imagesBtn').textContent = permission === 'granted'
+        ? 'Images folder: ' + imagesDirHandle.name
+        : 'Reconnect images folder';
+    }
+    if(fileHandle){
+      const permission = await permissionFor(fileHandle, 'read');
+      if(permission === 'granted'){
+        $('#openBtn').textContent = 'Open remembered catalog';
+        setStatus('Catalog connection remembered. Click Open remembered catalog to load it.');
+      } else {
+        $('#openBtn').textContent = 'Reconnect catalog.json';
+        setStatus('Saved catalog found. Click Reconnect catalog.json if it did not reopen automatically.');
+      }
+    }
+    if(!catalog.length){
+      const response = await fetch('catalog.json?v=' + Date.now());
+      if(response.ok){
+        await loadCatalogData(await response.json(), 'catalog.json (browse mode)');
+        setStatus('Catalog loaded for browsing. Reconnect catalog.json only when you need to save changes.');
+      }
+    }
+  }catch(err){
+    try{
+      const response = await fetch('catalog.json?v=' + Date.now());
+      if(response.ok) await loadCatalogData(await response.json(), 'catalog.json (browse mode)');
+    }catch(e){
+      setStatus('Could not load the catalog. Refresh the page and try again.');
+    }
+  }
+}
+restoreSavedHandles();
+
+$('#saveBtn').addEventListener('click', async () => {
+  if(!fileHandle){
+    downloadCatalog();
+    return;
+  }
+  try{
+    if(fileHandle.queryPermission){
+      let permission = await fileHandle.queryPermission({ mode: 'readwrite' });
+      if(permission !== 'granted') permission = await fileHandle.requestPermission({ mode: 'readwrite' });
+      if(permission !== 'granted') throw new Error('Write access was not granted. Reopen catalog.json and allow editing when the browser asks.');
+    }
+    const writable = await fileHandle.createWritable();
+    await writable.write(JSON.stringify(catalog, null, 4));
+    await writable.close();
+    dirty = false;
+    $('#saveBtn').disabled = true;
+    setStatus('Saved just now', 'saved');
+  }catch(err){
+    downloadCatalog();
+    alert('The browser blocked direct saving, so I downloaded catalog.updated.json instead. Replace data/catalog.json with that downloaded file.');
+  }
+});
+
+window.addEventListener('beforeunload', e => {
+  if(dirty){ e.preventDefault(); e.returnValue = ''; }
+});
+</script>
+</body>
+</html>

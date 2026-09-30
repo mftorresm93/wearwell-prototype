@@ -10,6 +10,7 @@
     --line:#e7e2db; --accent:#b08968; --accent-soft:#f0e9e2; --good:#178a4c;
   }
   *{box-sizing:border-box}
+  html, body{overflow-x:hidden; max-width:100%}
   body{font-family:"Segoe UI",system-ui,Arial,sans-serif; margin:0; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased}
   .wrap{max-width:1140px; margin:0 auto; padding:28px 22px 60px}
 
@@ -61,7 +62,7 @@
     .controls #typeSeg button{flex:1; padding:4px 10px; font-size:13px}
   }
   .piece{position:relative; border-radius:14px; overflow:hidden; background:#faf8f6; border:1px solid var(--line)}
-  .piece img{display:block; width:100%; height:220px; object-fit:contain; padding:10px}
+  .piece img{display:block; width:100%; height:180px; object-fit:contain; padding:10px}
   .piece .tag{position:absolute; top:10px; left:10px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:rgba(29,27,25,.72); padding:4px 9px; border-radius:999px}
   .piece .cap{position:absolute; bottom:0; left:0; right:0; padding:20px 12px 10px; background:linear-gradient(to top,rgba(255,255,255,.97),rgba(255,255,255,0)); font-size:12px; color:#3a352f}
   .piece .cap b{display:block; font-size:13px; color:var(--ink)}
@@ -114,15 +115,18 @@
   .modal .filtergroup{display:flex; flex-direction:column; gap:7px; width:100%}
   .modal .filterlabel{font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
   .modal .filtertools{display:flex; align-items:center; gap:12px; flex-wrap:wrap; width:100%; padding-top:2px}
+    .modal .maxprice{width:92px; min-width:92px; padding:7px 9px; border:1px solid var(--line); border-radius:8px; font-size:13px; background:#fff}
   .modal .brandsel{border:1px solid var(--line); border-radius:9px; padding:6px 10px; font-size:13px; background:#fff; cursor:pointer}
   .modal .ctxtoggle{font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; cursor:pointer}
-  .modal .mgrid{overflow:auto; padding:18px; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px}
+  .modal .mgrid{overflow:auto; padding:18px; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); grid-auto-rows:max-content; gap:16px; align-items:start; min-height:0}
   .modal .gitem{border:1px solid var(--line); border-radius:14px; overflow:hidden; cursor:pointer; background:#faf8f6; transition:border-color .1s, box-shadow .1s; display:flex; flex-direction:column}
   .modal .gitem:hover{border-color:var(--accent); box-shadow:0 6px 16px rgba(0,0,0,.08)}
   .modal .gitem.sel{border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft)}
-  .modal .gitem img{display:block; width:100%; height:auto; aspect-ratio:4 / 3; max-height:250px; object-fit:contain; padding:12px; background:#fff}
-  .modal .gitem .gcap{font-size:12px; padding:9px 11px; border-top:1px solid var(--line); color:#3a352f; margin-top:auto}
+  .modal .gitem img{display:block; width:100%; height:200px; aspect-ratio:auto; max-height:none; object-fit:contain; padding:12px; background:#fff; flex:none}
+  .modal .gitem .gcap{font-size:12px; padding:10px 11px 12px; border-top:1px solid var(--line); color:#3a352f; display:flex; flex-direction:column; align-items:flex-start; gap:3px}
   .modal .gitem .gcap b{display:block; font-size:13px}
+  .modal .gitem .gselect{display:block; width:100%; margin-top:8px; border:1px solid var(--ink); background:var(--ink); color:#fff; border-radius:8px; padding:9px 11px; font-size:12px; font-weight:700; cursor:pointer}
+  .modal .gitem .gselect:hover{background:#3a352f}
   .modal .empty2{padding:44px; text-align:center; color:var(--muted); grid-column:1/-1}
   .modal .mfoot{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 18px; border-top:1px solid var(--line)}
   .modal .pnums{display:flex; gap:6px; flex-wrap:wrap; justify-content:center}
@@ -270,7 +274,7 @@
     .modal .box{width:100%; max-height:92vh}
     .modal .mgrid{grid-template-columns:1fr; grid-auto-rows:max-content; align-items:start; align-content:start; min-height:0; padding:12px 14px; gap:12px}
     .modal .gitem{min-height:0; height:auto}
-    .modal .gitem img{height:auto; aspect-ratio:1.35 / 1; max-height:210px; object-fit:contain; padding:10px}
+    .modal .gitem img{height:190px; aspect-ratio:auto; max-height:none; object-fit:contain; padding:10px}
     .modal .mfoot{padding:10px 12px; gap:6px}
     .modal .pnums{flex-wrap:nowrap; gap:4px}
     .modal .pnum{min-width:28px; height:30px}
@@ -302,6 +306,7 @@
   .favtabs button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:8px 16px; font-size:13px; font-weight:700; color:var(--muted); cursor:pointer}
   .favtabs button.active{background:var(--ink); color:#fff; border-color:var(--ink)}
   #favGrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px}
+  #favGrid > .pintro{grid-column:1/-1; text-align:center; max-width:320px; justify-self:center; margin:8px auto 0; line-height:1.5}
   .brand-group{grid-column:1/-1; display:flex; flex-direction:column; gap:12px}
   .brand-header{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:800; padding:0 4px}
   .brand-row{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px}
@@ -361,6 +366,16 @@
   .mycard .mcap b{display:block; font-size:13px; color:var(--ink)}
   .mycard .mrm{position:absolute; top:8px; right:8px; z-index:2; border:1px solid var(--line); background:rgba(255,255,255,.94); border-radius:8px; width:30px; height:30px; font-size:15px; cursor:pointer; color:#b23b3b; line-height:1}
   .myempty{grid-column:1/-1; padding:34px; text-align:center; color:var(--muted); font-size:14px; border:1px dashed var(--line); border-radius:14px; background:#faf8f6}
+  .bodyprofiles{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:10px}
+  .bodyprofile{border:1px solid var(--line); background:#fff; border-radius:12px; padding:9px 6px; cursor:pointer; color:var(--muted); text-align:center; font-size:11px; line-height:1.2; min-height:92px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start}
+  .bodyprofile.active{border-color:var(--accent); background:var(--accent-soft); color:var(--ink); box-shadow:0 0 0 2px var(--accent-soft)}
+  .silhouette{display:block; height:54px; position:relative; margin:0 auto 6px; width:36px; color:#8e735c; flex:none}
+  .silhouette:before{content:""; position:absolute; width:13px; height:13px; border-radius:50%; background:currentColor; top:0; left:12px}
+  .silhouette:after{content:""; position:absolute; width:24px; height:34px; border-radius:45% 45% 35% 35%; background:currentColor; top:16px; left:6px}
+  .bodyprofile[data-profile="Curvy"] .silhouette:after{width:30px; left:3px; border-radius:45% 45% 42% 42%}
+  .bodyprofile[data-profile="Fuller figure"] .silhouette:after{width:34px; left:1px; border-radius:42% 42% 38% 38%}
+  .bodyprofile[data-profile="Petite"] .silhouette:after{height:29px; top:18px}
+  .bodyprofile[data-profile="Tall"] .silhouette:after{height:39px; top:14px}
 
   .lightbox{position:fixed; inset:0; background:rgba(20,17,14,.88); display:flex; align-items:center; justify-content:center; z-index:1000; padding:28px; opacity:0; pointer-events:none; transition:opacity .15s}
   .lightbox.open{opacity:1; pointer-events:auto}
@@ -401,7 +416,7 @@
 
   <div class="modenav" id="modeNav">
     <button data-mode="presets" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.8L18.5 9.5l-4.8 1.7L12 16l-1.7-4.8L5.5 9.5l4.8-1.7z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>Starter looks</button>
-    <button data-mode="build"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>Build your own</button>
+    <button data-mode="build"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>Build an outfit</button>
     <button data-mode="favorites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.4 5.4 0 0 0-7.7 0l-1.1 1.1-1.1-1.1a5.4 5.4 0 1 0-7.7 7.7l1.1 1.1 7.7 7.6 7.7-7.6 1.1-1.1a5.4 5.4 0 0 0 0-7.7z"/></svg>Favorites</button>
   </div>
 
@@ -446,7 +461,7 @@
   </section>
 
   <section id="closetView" style="display:none">
-    <p class="pintro">Choose where your outfits come from &mdash; start with our curated closet, or build your own from things you already own.</p>
+    <p class="pintro">Choose the occasion and pieces, then build an outfit from the catalog.</p>
     <div class="sources">
 
       <div class="srccard ess">
@@ -535,12 +550,23 @@
       </div>
       <div class="setcard">
         <h3>Preferences</h3>
+        <div class="setrow">
+          <label>Body profile</label>
+          <div class="ts">Used to guide future AI outfit photos. Choose the proportions that feel most like you.</div>
+          <div class="bodyprofiles" id="bodyProfiles">
+            <button type="button" class="bodyprofile" data-profile="Natural" onclick="setBodyProfile('Natural')"><span class="silhouette"></span>Natural</button>
+            <button type="button" class="bodyprofile" data-profile="Curvy" onclick="setBodyProfile('Curvy')"><span class="silhouette"></span>Curvy</button>
+            <button type="button" class="bodyprofile" data-profile="Fuller figure" onclick="setBodyProfile('Fuller figure')"><span class="silhouette"></span>Fuller figure</button>
+            <button type="button" class="bodyprofile" data-profile="Petite" onclick="setBodyProfile('Petite')"><span class="silhouette"></span>Petite</button>
+            <button type="button" class="bodyprofile" data-profile="Tall" onclick="setBodyProfile('Tall')"><span class="silhouette"></span>Tall</button>
+          </div>
+        </div>
         <div class="togrow">
-          <div><div class="tl">AI photo generation</div><div class="ts">Generate styled photos of your outfits</div></div>
+          <div><div class="tl">AI photo generation <span class="pro">Pro</span></div><div class="ts">Generate styled photos of your outfits with your body profile</div></div>
           <div class="switch on" onclick="this.classList.toggle('on')"></div>
         </div>
         <div class="togrow">
-          <div><div class="tl">Add your own pieces</div><div class="ts">Save items from any store into My Closet</div></div>
+          <div><div class="tl">Add your own pieces <span class="pro">Pro</span></div><div class="ts">Save items from any store into My Closet</div></div>
           <div class="switch" onclick="this.classList.toggle('on')"></div>
         </div>
         <div class="togrow">
@@ -575,6 +601,7 @@ let outfitType = 'separates';   // 'separates' (top+bottom) or 'dress'
 // catalog picker modal state
 let pickerSlots = null, pickerAcc = false;
 let pickerCat = 'All', pickerBrand = 'All', pickerCtx = true, pickerPage = 0;
+let pickerMaxPrice = '';
 const PAGE_SIZE = 8;
 let curImgName = '', curCmd = '';   // current combo's image filename + generate command
 let PRESETS = [];
@@ -582,6 +609,7 @@ let FAVORITES = [];       // saved whole outfits
 let FAV_ITEMS = [];       // saved individual item ids
 let favTab = 'items';     // favorites sub-tab: 'items' | 'looks'
 let appMode = 'build';      // 'presets' (starter looks) | 'build' | 'favorites'
+let bodyProfile = 'Natural';
 
 // --- My Closet (add-your-own) state ---
 let CATEGORIES = [];       // from taxonomy.json
@@ -651,11 +679,13 @@ function setType(type){
 
 function removeSlot(key){ delete selection[key]; render(); }
 
-function openPicker(slot){ pickerSlots = [slot]; pickerAcc = false; pickerCat = 'All'; pickerBrand = 'All'; pickerCtx = true; pickerPage = 0; renderModal(); }
-function openAccPicker(cat){ pickerSlots = ACCESSORY_SLOTS.slice(); pickerAcc = true; pickerCat = cat || 'All'; pickerBrand = 'All'; pickerCtx = true; pickerPage = 0; renderModal(); }
+function resetPickerFilters(){ pickerCat = 'All'; pickerBrand = 'All'; pickerCtx = true; pickerPage = 0; pickerMaxPrice = ''; }
+function openPicker(slot){ pickerSlots = [slot]; pickerAcc = false; resetPickerFilters(); renderModal(); }
+function openAccPicker(cat){ pickerSlots = ACCESSORY_SLOTS.slice(); pickerAcc = true; resetPickerFilters(); pickerCat = cat || 'All'; renderModal(); }
 function closePicker(){ pickerSlots = null; renderModal(); }
 function setPickerCat(cat){ pickerCat = cat; pickerPage = 0; renderModal(); }
 function setPickerBrand(b){ pickerBrand = b; pickerPage = 0; renderModal(); }
+function setPickerPrice(value){ pickerMaxPrice = value; pickerPage = 0; renderModal(); }
 function togglePickerCtx(){ pickerCtx = !pickerCtx; pickerPage = 0; renderModal(); }
 function setPickerPage(p){ pickerPage = p; renderModal(); }
 function pickItem(id){
@@ -673,11 +703,24 @@ function renderModal(){
   const source = pickerCtx ? all.filter(i => matchesContext(i, $('#occasion').value, $('#weather').value)) : all;
 
   const cats = ['All', ...Array.from(new Set(all.map(i => i.category)))];
+  if(pickerSlots.includes('Shoes')){
+    if(!cats.includes('Sandals')) cats.push('Sandals');
+    if(!cats.includes('Flats')) cats.push('Flats');
+  }
   const brands = ['All', ...Array.from(new Set(all.map(i => i.brand))).sort()];
 
+  const isShoeStyle = i => {
+    if(i.slot !== 'Shoes') return 'Other';
+    if(i.category === 'Sandals') return 'Sandals';
+    if(i.category === 'Sneakers') return 'Sneakers';
+    if(i.category === 'Booties') return 'Booties';
+    return 'Flats';
+  };
+  const maxPrice = pickerMaxPrice === '' ? null : Number(pickerMaxPrice);
   const items = source.filter(i =>
-    (pickerCat === 'All' || i.category === pickerCat) &&
-    (pickerBrand === 'All' || i.brand === pickerBrand)
+    (pickerCat === 'All' || (pickerCat === 'Flats' ? isShoeStyle(i) === 'Flats' : i.category === pickerCat)) &&
+    (pickerBrand === 'All' || i.brand === pickerBrand) &&
+    (maxPrice === null || (Number.isFinite(Number(i.price)) && Number(i.price) <= maxPrice))
   );
 
   const pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
@@ -691,7 +734,7 @@ function renderModal(){
   const brandOpts = brands.map(b => `<option value="${b}" ${b === pickerBrand ? 'selected' : ''}>${b === 'All' ? 'All brands' : b}</option>`).join('');
 
   const grid = pageItems.length
-    ? pageItems.map(i => `<div class="gitem ${isSel(i) ? 'sel' : ''}" onclick="pickItem(${i.id})"><button class="gfav ${isItemFav(i.id) ? 'on' : ''}" onclick="event.stopPropagation();toggleItemFav(${i.id})" title="Favorite">${isItemFav(i.id) ? '&#9829;' : '&#9825;'}</button>${imgZoom(i.image, `${i.brand} ${i.category}`, 'loading="lazy"')}<div class="gcap"><b>${i.category}</b>${i.brand}${money(i.price) ? ` &middot; <span class="gprice">${money(i.price)}</span>` : ''}${i.url ? `<a class="gshop" href="${i.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View in store &#8599;</a>` : ''}</div></div>`).join('')
+    ? pageItems.map(i => `<div class="gitem ${isSel(i) ? 'sel' : ''}" onclick="pickItem(${i.id})"><button class="gfav ${isItemFav(i.id) ? 'on' : ''}" onclick="event.stopPropagation();toggleItemFav(${i.id})" title="Favorite">${isItemFav(i.id) ? '&#9829;' : '&#9825;'}</button>${imgZoom(i.image, `${i.brand} ${i.category}`, 'loading="lazy"')}<div class="gcap"><b>${i.category}</b><span>${i.brand}${money(i.price) ? ` &middot; <span class="gprice">${money(i.price)}</span>` : ''}</span>${i.url ? `<a class="gshop" href="${i.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">View in store &#8599;</a>` : ''}<button class="gselect" onclick="event.stopPropagation();pickItem(${i.id})">Select</button></div></div>`).join('')
     : `<div class="empty2">Nothing matches these filters. Try &ldquo;All&rdquo; or untick &ldquo;Match occasion &amp; weather&rdquo;.</div>`;
 
   const pageButton = p => `<button class="pnum ${p === pickerPage ? 'active' : ''}" onclick="setPickerPage(${p})">${p + 1}</button>`;
@@ -722,6 +765,8 @@ function renderModal(){
           <div class="filtertools">
             <span class="filterlabel">Refine</span>
             <select class="brandsel" onchange="setPickerBrand(this.value)">${brandOpts}</select>
+            <label class="filterlabel" for="maxPrice">Max price</label>
+            <input id="maxPrice" class="maxprice" type="number" min="0" step="1" placeholder="$" value="${pickerMaxPrice}" onchange="setPickerPrice(this.value)">
             <label class="ctxtoggle"><input type="checkbox" ${pickerCtx ? 'checked' : ''} onchange="togglePickerCtx()"> Match current occasion &amp; weather</label>
           </div>
         </div>
@@ -732,13 +777,19 @@ function renderModal(){
 }
 
 function saveState(){
-  const state = { occ: $('#occasion').value, weather: $('#weather').value, type: outfitType, mode: appMode, sel: {} };
+  const state = { occ: $('#occasion').value, weather: $('#weather').value, type: outfitType, mode: appMode, bodyProfile, sel: {} };
   for(const k of Object.keys(selection)){ if(selection[k]) state.sel[k] = selection[k].id; }
   try{ localStorage.setItem('outfitState', JSON.stringify(state)); }catch(e){}
 }
 
 function loadState(){
   try{ return JSON.parse(localStorage.getItem('outfitState')); }catch(e){ return null; }
+}
+
+function setBodyProfile(profile){
+  bodyProfile = profile;
+  document.querySelectorAll('.bodyprofile').forEach(button => button.classList.toggle('active', button.dataset.profile === profile));
+  saveState();
 }
 
 function orderedSelection(){
@@ -764,7 +815,7 @@ function render(){
   const ids = currentIds();
   const idsArg = ids.join(',');
   const imgName = 'outfit-' + ids.join('-') + '.png';
-  const cmd = `.\\tools\\generate-outfit-image.ps1 -Items ${idsArg} -Occasion "${occ}" -Weather "${weather}"`;
+  const cmd = `.\\tools\\generate-outfit-image.ps1 -Items ${idsArg} -Occasion "${occ}" -Weather "${weather}" -BodyProfile "${bodyProfile}"`;
   curImgName = imgName; curCmd = cmd;
 
   const piecesHtml = picks.map(({key,label,item,optional,acc}) => {
@@ -1260,10 +1311,10 @@ async function init(){
     for(const it of CATALOG){ (bySlot[it.slot] ||= []).push(it); BYID[it.id] = it; }
     for(const s of ACCESSORY_SLOTS){ for(const it of (bySlot[s]||[])){ if(!ACC_CATS.includes(it.category)) ACC_CATS.push(it.category); } }
 
-    const rawOccasions = (tax && tax.occasions) || ['Work','Casual','Going out','Lounge','Resort'];
-    const occasions = rawOccasions.map(o => o === 'Beach' ? 'Resort' : o).filter((o, i, all) => all.indexOf(o) === i);
+    const rawOccasions = (tax && tax.occasions) || ['Work','Casual','Going out','Lounge','Beachwear'];
+    const occasions = rawOccasions.map(o => (o === 'Beach' || o === 'Resort') ? 'Beachwear' : o).filter((o, i, all) => all.indexOf(o) === i);
     if(!occasions.includes('Lounge')) occasions.push('Lounge');
-    if(!occasions.includes('Resort')) occasions.push('Resort');
+    if(!occasions.includes('Beachwear')) occasions.push('Beachwear');
     const weathers = (tax && tax.weathers) || ['All year','Cold','Hot'];
     OCCASIONS = occasions;
     CATEGORIES = (tax && tax.categories) || Object.keys(SLOT_OF_CATEGORY);
@@ -1286,6 +1337,8 @@ async function init(){
 
     // Restore the last outfit so reloads don't re-shuffle (keeps AI photo matched).
     const saved = loadState();
+    bodyProfile = saved?.bodyProfile || 'Natural';
+    document.querySelectorAll('.bodyprofile').forEach(button => button.classList.toggle('active', button.dataset.profile === bodyProfile));
     if(saved && saved.sel && Object.keys(saved.sel).length){
       $('#occasion').value = saved.occ || 'Work';
       $('#weather').value = saved.weather || 'All year';

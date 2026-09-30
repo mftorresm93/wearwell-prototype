@@ -24,7 +24,8 @@
         "weather":  "All year",
         "occasions":  [
                           "Casual",
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/2.jpg",
         "imageSource":  "web",
@@ -106,7 +107,8 @@
         "weather":  "All year",
         "occasions":  [
                           "Casual",
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/6.jpg",
         "imageSource":  "web",
@@ -221,7 +223,8 @@
         "category":  "Shirts",
         "weather":  "Hot",
         "occasions":  [
-                          "Casual"
+                          "Casual",
+                          "Going out"
                       ],
         "image":  "images/109.jpg",
         "imageSource":  "web",
@@ -237,7 +240,8 @@
         "category":  "Shirts",
         "weather":  "Hot",
         "occasions":  [
-                          "Casual"
+                          "Casual",
+                          "Going out"
                       ],
         "image":  "images/110.jpg",
         "imageSource":  "web",
@@ -251,7 +255,7 @@
         "brand":  "Everlane",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -286,7 +290,8 @@
         "category":  "Shirts",
         "weather":  "Hot",
         "occasions":  [
-                          "Casual"
+                          "Casual",
+                          "Going out"
                       ],
         "image":  "images/113.webp",
         "imageSource":  "web",
@@ -300,7 +305,7 @@
         "brand":  "Everlane",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Going out"
@@ -334,7 +339,7 @@
         "brand":  "Madewell",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -348,7 +353,7 @@
         "brand":  "Madewell",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -376,7 +381,7 @@
         "brand":  "Madewell",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -390,7 +395,7 @@
         "brand":  "Quince",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -407,7 +412,7 @@
         "brand":  "Quince",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -424,7 +429,7 @@
         "brand":  "Quince",
         "slot":  "Top",
         "category":  "Shirts",
-        "weather":  "Hot",
+        "weather":  "All year",
         "occasions":  [
                           "Casual",
                           "Work"
@@ -549,7 +554,7 @@
         "brand":  "Quince",
         "slot":  "Top",
         "category":  "T-shirts",
-        "weather":  "Cold",
+        "weather":  "All year",
         "occasions":  [
                           "Work"
                       ],
@@ -664,7 +669,8 @@
         "weather":  "All year",
         "occasions":  [
                           "Casual",
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/23.jpg",
         "imageSource":  "web",
@@ -732,7 +738,8 @@
         "weather":  "All year",
         "occasions":  [
                           "Casual",
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/33.webp",
         "imageSource":  "web",
@@ -749,7 +756,8 @@
         "weather":  "All year",
         "occasions":  [
                           "Casual",
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/34.webp",
         "imageSource":  "web",
@@ -1021,7 +1029,8 @@
         "category":  "Sweaters",
         "weather":  "Cold",
         "occasions":  [
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/153.jpg",
         "imageSource":  "web",
@@ -1038,7 +1047,8 @@
         "weather":  "Cold",
         "occasions":  [
                           "Casual",
-                          "Work"
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/156.jpg",
         "imageSource":  "web",
@@ -2026,7 +2036,7 @@
         "brand":  "Quince",
         "slot":  "Dress",
         "category":  "Dresses",
-        "weather":  "Cold",
+        "weather":  "All year",
         "occasions":  [
                           "Work"
                       ],
@@ -2454,7 +2464,8 @@
         "weather":  "Hot",
         "occasions":  [
                           "Casual",
-                          "Going out"
+                          "Going out",
+                          "Work"
                       ],
         "image":  "images/142.webp",
         "imageSource":  "web",
@@ -2706,7 +2717,9 @@
         "category":  "Bags",
         "weather":  "All year",
         "occasions":  [
-                          "Casual"
+                          "Casual",
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/163.jpg",
         "imageSource":  "web",
@@ -2721,7 +2734,9 @@
         "category":  "Bags",
         "weather":  "All year",
         "occasions":  [
-                          "Casual"
+                          "Casual",
+                          "Work",
+                          "Going out"
                       ],
         "image":  "images/164.jpg",
         "imageSource":  "web",
@@ -2760,6 +2775,518 @@
         "imageSource":  "web",
         "url":  "https://tkees.com/products/square-toe-lilu-sable?currency=USD\u0026country=US\u0026variant=44993789722799\u0026stkn=ae255d640db4\u0026tw_source=google\u0026tw_adid=\u0026tw_campaign=18310208379\u0026tw_kwdid=\u0026gad_source=1\u0026gad_campaignid=17507316402\u0026gbraid=0AAAAADPT6TyWD62pBirGB-DmAXeqecUmI\u0026gclid=CjwKCAjwn67VBhBnEiwAXUIN1Rm5fO9oPm8QpEY_-aEAjNioOk5506j-i6mjZA-OANfbFIi_2jcOKhoCm4gQAvD_BwE",
         "price":  120,
+        "currency":  "USD"
+    },
+    {
+        "id":  167,
+        "brand":  "Matisse",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/167.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.matissefootwear.com/products/devyn-sneaker-mule-taupe?currency=USD\u0026country=US\u0026variant=42839150231623\u0026utm_source=google\u0026utm_medium=cpc\u0026utm_campaign=Google%20Shopping\u0026stkn=38fc23a169bb\u0026utm_source=google\u0026utm_medium=cpc\u0026utm_campaign=224808631131\u0026utm_content=184266631131\u0026utm_term=\u0026tw_source=google\u0026tw_adid=748540292877\u0026tw_campaign=22480857020\u0026tw_kwdid=pla-306153797726\u0026gad_source=1\u0026gad_campaignid=22480857020\u0026gbraid=0AAAAADg_s7hWAdrbcM3Sh8anc-VDWL4Mk\u0026gclid=Cj0KCQjw5vLVBhCiARIsAD56SFJ592MQwEWZSAxhdMj3gjtNrb5kWDksqepp-3SrTXTREnyKaLFe-sUaAs51EALw_wcB",
+        "price":  90,
+        "currency":  "USD"
+    },
+    {
+        "id":  168,
+        "brand":  "Matisse",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/168.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.matissefootwear.com/products/vancouver-bucket-bag-onyx",
+        "price":  85,
+        "currency":  "USD"
+    },
+    {
+        "id":  169,
+        "brand":  "Quince",
+        "slot":  "Accessory",
+        "category":  "Belts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/169.webp",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/elissa-triple-keeper-european-leather-belt?color=black%2Fgold\u0026gender=women",
+        "price":  58,
+        "currency":  "USD"
+    },
+    {
+        "id":  170,
+        "brand":  "Quince",
+        "slot":  "Accessory",
+        "category":  "Belts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/170.webp",
+        "imageSource":  "web",
+        "url":  "https://www.quince.com/women/alyssa-european-leather-studded-belt?color=black%2Fsilver\u0026gender=women",
+        "price":  68,
+        "currency":  "USD"
+    },
+    {
+        "id":  171,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/171.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=406647002\u0026vid=2\u0026pcid=5664\u0026cid=5664\u0026nav=meganav%3AWomen%3ACategories%3AJeans#pdp-page-content",
+        "price":  53,
+        "currency":  "USD"
+    },
+    {
+        "id":  172,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/172.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=911423002\u0026vid=1\u0026pcid=5664\u0026cid=5664\u0026nav=meganav%3AWomen%3ACategories%3AJeans#pdp-page-content",
+        "price":  71,
+        "currency":  "USD"
+    },
+    {
+        "id":  173,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/173.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=911403002\u0026vid=1\u0026pcid=5664\u0026cid=5664\u0026nav=meganav%3AWomen%3ACategories%3AJeans#pdp-page-content",
+        "price":  62,
+        "currency":  "USD"
+    },
+    {
+        "id":  174,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/174.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=780807002\u0026vid=1\u0026pcid=5664\u0026cid=5664\u0026nav=meganav%3AWomen%3ACategories%3AJeans#pdp-page-content",
+        "price":  71,
+        "currency":  "USD"
+    },
+    {
+        "id":  175,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Jeans",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/175.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=844930002\u0026vid=1\u0026pcid=5664\u0026cid=5664\u0026nav=meganav%3AWomen%3ACategories%3AJeans#pdp-page-content",
+        "price":  71,
+        "currency":  "USD"
+    },
+    {
+        "id":  176,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/176.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=911271002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  49,
+        "currency":  "USD"
+    },
+    {
+        "id":  177,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/177.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=912652022\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  94,
+        "currency":  "USD"
+    },
+    {
+        "id":  178,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/178.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=877716002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  59,
+        "currency":  "USD"
+    },
+    {
+        "id":  179,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/179.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=912624002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  94,
+        "currency":  "USD"
+    },
+    {
+        "id":  180,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/180.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=892680002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  47,
+        "currency":  "USD"
+    },
+    {
+        "id":  181,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/181.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=898043002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  39,
+        "currency":  "USD"
+    },
+    {
+        "id":  182,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/182.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=878167022\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  64.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  183,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/183.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=898032002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  74.99,
+        "currency":  "USD"
+    },
+    {
+        "id":  184,
+        "brand":  "Gap",
+        "slot":  "Dress",
+        "category":  "Dresses",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/184.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=879177002\u0026vid=1\u0026pcid=13658\u0026cid=13658\u0026nav=meganav%3AWomen%3ACategories%3ADresses#pdp-page-content",
+        "price":  79.97,
+        "currency":  "USD"
+    },
+    {
+        "id":  185,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work"
+                      ],
+        "image":  "images/185.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=909072012\u0026vid=1\u0026pcid=1082574\u0026cid=1082574\u0026nav=meganav%3AWomen%3ACategories%3ASkirts#pdp-page-content",
+        "price":  99.95,
+        "currency":  "USD"
+    },
+    {
+        "id":  186,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/186.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=912607002\u0026vid=1\u0026pcid=1082574\u0026cid=1082574\u0026nav=meganav%3AWomen%3ACategories%3ASkirts#pdp-page-content",
+        "price":  53,
+        "currency":  "USD"
+    },
+    {
+        "id":  187,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/187.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=912604022\u0026vid=1\u0026pcid=1082574\u0026cid=1082574\u0026nav=meganav%3AWomen%3ACategories%3ASkirts#pdp-page-content",
+        "price":  49,
+        "currency":  "USD"
+    },
+    {
+        "id":  188,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/188.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=877699012\u0026vid=1\u0026pcid=1082574\u0026cid=1082574\u0026nav=meganav%3AWomen%3ACategories%3ASkirts#pdp-page-content",
+        "price":  47,
+        "currency":  "USD"
+    },
+    {
+        "id":  189,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/189.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=898546042\u0026vid=1\u0026pcid=1082574\u0026cid=1082574\u0026nav=meganav%3AWomen%3ACategories%3ASkirts#pdp-page-content",
+        "price":  69.95,
+        "currency":  "USD"
+    },
+    {
+        "id":  190,
+        "brand":  "Gap",
+        "slot":  "Bottom",
+        "category":  "Skirts",
+        "weather":  "Hot",
+        "occasions":  [
+                          "Casual"
+                      ],
+        "image":  "images/190.jpg",
+        "imageSource":  "web",
+        "url":  "https://www.gap.com/browse/product.do?pid=843522052\u0026vid=1\u0026pcid=1082574\u0026cid=1082574\u0026nav=meganav%3AWomen%3ACategories%3ASkirts#pdp-page-content",
+        "price":  44,
+        "currency":  "USD"
+    },
+    {
+        "id":  191,
+        "brand":  "Tkees",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/191.jpg",
+        "imageSource":  "web",
+        "url":  "https://tkees.com/products/square-toe-reese-suede-cocobutter?currency=USD\u0026country=US\u0026variant=47500056690863\u0026stkn=ae255d640db4\u0026tw_source=google\u0026tw_adid=\u0026tw_campaign=18310208379\u0026tw_kwdid=\u0026gad_source=1\u0026gad_campaignid=17507316402\u0026gbraid=0AAAAADPT6TwXAJv-r0FaR7sgFAvzYkPJH\u0026gclid=Cj0KCQjw5vLVBhCiARIsAD56SFKerTQAtuMFIM2QZ0qPg9w5-8Gwya7wC8lxsk6bQL-7JJRfZnkKiO0aAs__EALw_wcB",
+        "price":  225,
+        "currency":  "USD"
+    },
+    {
+        "id":  192,
+        "brand":  "Tkees",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/192.jpg",
+        "imageSource":  "web",
+        "url":  "https://tkees.com/products/square-toe-reese-suede-sable",
+        "price":  225,
+        "currency":  "USD"
+    },
+    {
+        "id":  193,
+        "brand":  "Tkees",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/193.jpg",
+        "imageSource":  "web",
+        "url":  "https://tkees.com/collections/reese/products/reese-beach-bum",
+        "price":  175,
+        "currency":  "USD"
+    },
+    {
+        "id":  194,
+        "brand":  "Tkees",
+        "slot":  "Shoes",
+        "category":  "Shoes",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/194.jpg",
+        "imageSource":  "web",
+        "url":  "https://tkees.com/products/reese-claret",
+        "price":  175,
+        "currency":  "USD"
+    },
+    {
+        "id":  195,
+        "brand":  "The Horse",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Work",
+                          "Going out"
+                      ],
+        "image":  "images/195.jpg",
+        "imageSource":  "web",
+        "url":  "https://thehorse.co/products/mini-clementine-bag-charcoal-pebbled-leather?currency=USD\u0026country=US\u0026variant=41847404101737\u0026utm_source=google\u0026utm_medium=cpc\u0026utm_campaign=Google%20Shopping\u0026stkn=cc14c6e45773\u0026utm_source=google\u0026utm_medium=cpc\u0026utm_campaign=AU-PMAX-BAGS-NON-BRAND",
+        "price":  249.95,
+        "currency":  "USD"
+    },
+    {
+        "id":  196,
+        "brand":  "Zadig \u0026 Voltaire",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/196.jpg",
+        "imageSource":  "web",
+        "url":  "https://zadig-et-voltaire.com/us/en/p/LWBA04111098/gray-grained-leather-bag-for-women?gad_source=1\u0026gad_campaignid=23845666778\u0026gbraid=0AAAAADNXahVYupFrt8g2PfRP_Ca12K144\u0026gclid=Cj0KCQjw5vLVBhCiARIsAD56SFLCRjLKqP6NDJIts_E2gCCZAel6DL06oioHRWKLUXUGUx1TgmtEFm4aAtQJEALw_wcB"
+    },
+    {
+        "id":  197,
+        "brand":  "Polène",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out",
+                          "Work"
+                      ],
+        "image":  "images/197.png",
+        "imageSource":  "web",
+        "url":  "https://eng.polene-paris.com/products/nodde-hobo-smooth-ebony"
+    },
+    {
+        "id":  198,
+        "brand":  "Verafied NY",
+        "slot":  "Bag",
+        "category":  "Bags",
+        "weather":  "All year",
+        "occasions":  [
+                          "Casual",
+                          "Going out"
+                      ],
+        "image":  "images/198.png",
+        "imageSource":  "web",
+        "url":  "https://verafiedny.com/products/silver-metallic-cafe-mini-bag",
+        "price":  248,
         "currency":  "USD"
     }
 ]

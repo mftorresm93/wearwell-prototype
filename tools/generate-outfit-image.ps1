@@ -31,6 +31,8 @@ param(
     [int[]]$Items = @(2, 58, 88, 98),                       # catalog IDs that make up the outfit
     [string]$Occasion = 'Work',                             # styling context for the prompt
     [string]$Weather = 'All year',                          # weather context for the prompt
+    [ValidateSet('Natural', 'Curvy', 'Fuller figure', 'Petite', 'Tall')]
+    [string]$BodyProfile = 'Natural',                       # model proportions for the prompt
     [string]$Background = 'a bright, minimal home interior with natural light',
     [string]$Notes = '',                                    # free-text extra styling details for the prompt
     [ValidateSet('1024x1024', '1024x1536', '1536x1024', 'auto')]
@@ -161,12 +163,20 @@ if (-not $NoReference -and $refs.Count -gt 0) {
 else { $fidelityClause = '' }
 $notesClause = if ([string]::IsNullOrWhiteSpace($Notes)) { '' } else { " Additional details (only to clarify, never to override the reference images): $Notes." }
 
+$bodyClause = switch ($BodyProfile) {
+    'Curvy' { 'The model has a slim-to-moderate curvy silhouette, approximately a US size 6-8, with a gently defined waist and proportional hips and bust. Keep the proportions natural and refined; do not make her plus-size or exaggerate fullness.' }
+    'Fuller figure' { 'The model has a fuller figure with natural proportions, a soft midsection, and fuller hips and thighs. Do not slim or reshape her body.' }
+    'Petite' { 'The model has a petite frame with realistic proportions.' }
+    'Tall' { 'The model has a tall frame with realistic proportions.' }
+    default { 'The model has natural, realistic proportions.' }
+}
+
 $prompt = @"
-Full-body editorial fashion photograph of a single female model wearing exactly one complete outfit for a $Occasion setting in $Weather weather.$fidelityClause
+Full-body editorial fashion photograph of a single female model wearing exactly one complete outfit for a $Occasion setting in $Weather weather. Body profile: $BodyProfile. $bodyClause$fidelityClause
 The outfit is made up of EXACTLY these items and nothing else - $pieceList.
 Do not add, invent, or substitute any clothing that is not in that list: no extra jacket, coat, blazer, cardigan, scarf, hat, belt, sunglasses, or jewelry unless it is listed above.
 Keep every garment's exact color, shade, and pattern as shown in its reference image; do not recolor anything and do not change the shoe style or shoe color.$accClause
-The model has a clear, natural face with no sunglasses and no bangs or fringe; hair is kept away from the forehead.
+Use a completely fictional adult fashion model with a new, non-recognizable face. Any people, faces, bodies, poses, hair, or styling visible in the product reference images are irrelevant and must be ignored; use the references only for the garments and accessories. Do not copy or resemble any reference model, person, identity, nationality, ethnicity, or cultural markers. Use an intentionally non-specific appearance, balanced ordinary facial features, natural makeup, hair kept away from the forehead, and no sunglasses or bangs/fringe.
 Show the full body from head to toe, including the shoes, in a natural relaxed standing pose.
 Setting: $Background. Soft natural lighting, realistic proportions, photorealistic, high resolution, clean and cohesive styling.$notesClause
 "@.Trim()
